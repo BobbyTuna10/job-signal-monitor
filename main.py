@@ -30,7 +30,6 @@ SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "robinhood", "label": "Robinhood"},
     {"type": "greenhouse", "token": "airbnb", "label": "Airbnb"},
     {"type": "greenhouse", "token": "stripe", "label": "Stripe"},
-    {"type": "lever", "handle": "contentful", "label": "Contentful"},
 ]
 
 
