@@ -708,12 +708,12 @@ def main() -> None:
                     print(f"Score: {score}")
                     print(f"Reasons: {reasons}")
 
-             if score < MIN_SCORE:
-    if DEBUG:
-        print("Excluded: below threshold")
-        print(f"Near-miss score: {score}")
-        print(f"Near-miss reasons: {reasons}")
-    continue
+                if score < MIN_SCORE:
+                    if DEBUG:
+                        print("Excluded: below threshold")
+                        print(f"Near-miss score: {score}")
+                        print(f"Near-miss reasons: {reasons}")
+                    continue
 
                 if DEBUG:
                     print("Included")
