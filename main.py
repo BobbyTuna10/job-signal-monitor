@@ -132,6 +132,13 @@ EXCLUDE_TERMS = [
     "program management",
     "ads platform",
     "writer",
+    "account development",
+    "business development",
+    "partnerships",
+    "partnership",
+    "strategic account",
+    "account executive",
+    "sales",
 ]
 
 ATLANTA_TERMS = [
@@ -422,7 +429,18 @@ def location_allowed(location: str) -> bool:
         return True
 
     return False
-
+def title_excluded_by_business_function(title: str) -> bool:
+    title_text = normalize_text(title)
+    blocked_terms = [
+        "account development",
+        "business development",
+        "partnerships",
+        "partnership",
+        "strategic account",
+        "account executive",
+        "sales",
+    ]
+    return any(term in title_text for term in blocked_terms)
 def exclusion_hit(job: Job) -> Optional[str]:
     haystack = normalize_text(
         " ".join(
@@ -772,10 +790,17 @@ def main() -> None:
                     continue
 
                 excluded_term = exclusion_hit(job)
+                               excluded_term = exclusion_hit(job)
                 if excluded_term:
                     if DEBUG:
                         print(f"Excluded: term '{excluded_term}'")
                     continue
+
+                if title_excluded_by_business_function(job.title):
+                    if DEBUG:
+                        print("Excluded: business-function title")
+                    continue
+
                 if not title_must_have_relevant_signal(job.title):
                     if DEBUG:
                         print("Excluded: title missing required signal")
