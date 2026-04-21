@@ -696,7 +696,6 @@ def main() -> None:
                         print(f"Excluded: term '{excluded_term}'")
                     continue
 
-
                 if job.fingerprint in jobs_seen:
                     if DEBUG:
                         print("Excluded: already seen")
@@ -723,12 +722,12 @@ def main() -> None:
                 job.first_seen_at = run_started
                 strong_matches.append(job)
 
- except Exception as exc:
-    source_name = source.get("label") or source.get("token") or source.get("handle") or "unknown"
-    error_message = f"{source_name}: {str(exc)}"
-    errors.append(error_message)
-    if DEBUG:
-        print(f"Source error: {error_message}")
+        except Exception as exc:
+            source_name = source.get("label") or source.get("token") or source.get("handle") or "unknown"
+            error_message = f"{source_name}: {str(exc)}"
+            errors.append(error_message)
+            if DEBUG:
+                print(f"Source error: {error_message}")
 
     strong_matches.sort(key=rank_key, reverse=True)
 
