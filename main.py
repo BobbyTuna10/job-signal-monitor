@@ -52,7 +52,6 @@ SOURCES: list[dict[str, str]] = [
     {"type": "lever", "handle": "twilio", "label": "Twilio"},
     {"type": "lever", "handle": "datadog", "label": "Datadog"},
 ]
-]
 
 
 # -----------------------------
