@@ -18,7 +18,7 @@ USER_AGENT = "job-signal-monitor/1.0"
 TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
-MIN_SCORE = 4
+MIN_SCORE = 2
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
 
