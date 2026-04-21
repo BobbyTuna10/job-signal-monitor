@@ -41,9 +41,17 @@ MIN_SCORE = 5
 # Keep this list small at first so you can validate output quality.
 
 SOURCES: list[dict[str, str]] = [
-    # {"type": "greenhouse", "token": "hubspot", "label": "HubSpot"},
-    # {"type": "greenhouse", "token": "adroll", "label": "AdRoll"},
-    # {"type": "lever", "handle": "netlify", "label": "Netlify"},
+    {"type": "greenhouse", "token": "hubspot", "label": "HubSpot"},
+    {"type": "greenhouse", "token": "shopify", "label": "Shopify"},
+    {"type": "greenhouse", "token": "robinhood", "label": "Robinhood"},
+    {"type": "greenhouse", "token": "airbnb", "label": "Airbnb"},
+    {"type": "greenhouse", "token": "stripe", "label": "Stripe"},
+    
+    {"type": "lever", "handle": "netlify", "label": "Netlify"},
+    {"type": "lever", "handle": "contentful", "label": "Contentful"},
+    {"type": "lever", "handle": "twilio", "label": "Twilio"},
+    {"type": "lever", "handle": "datadog", "label": "Datadog"},
+]
 ]
 
 
