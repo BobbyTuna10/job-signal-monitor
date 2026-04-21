@@ -390,7 +390,41 @@ def exclusion_hit(job: Job) -> Optional[str]:
         if term in haystack:
             return term
     return None
+# -----------------------------
+# Filtering and scoring
+# -----------------------------
 
+def title_signal_score(title: str) -> tuple[int, list[str]]:
+    title_text = normalize_text(title)
+    points = 0
+    reasons: list[str] = []
+
+    title_terms = {
+        "product": ("Product", 1),
+        "platform": ("Platform", 1),
+        "digital": ("Digital", 1),
+        "experience": ("Digital Experience", 1),
+        "content": ("Content", 1),
+        "cms": ("CMS", 2),
+        "aem": ("AEM", 2),
+        "sitecore": ("Sitecore", 2),
+        "martech": ("Martech", 1),
+        "web": ("Web", 1),
+        "strategy": ("Strategy", 1),
+        "operations": ("Operations", 1),
+        "transformation": ("Transformation", 1),
+    }
+
+    for term, (label, score) in title_terms.items():
+        if term in title_text:
+            points += score
+            if label not in reasons:
+                reasons.append(label)
+
+    return points, reasons
+
+
+def score_job(job: Job) -> tuple[int, list[str]]:
 
 def score_job(job: Job) -> tuple[int, list[str]]:
     haystack = normalize_text(
@@ -471,7 +505,11 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     if contains_any(location_text, ATLANTA_BOOST_TERMS):
         score += 1
         add_reason_once(reasons, "Atlanta")
-
+    # Add title-based scoring (new)
+    title_points, title_reasons = title_signal_score(job.title)
+    score += title_points
+    for reason in title_reasons:
+        add_reason_once(reasons, reason)
     return score, reasons
 
 
@@ -660,10 +698,6 @@ def main() -> None:
                         print(f"Excluded: term '{excluded_term}'")
                     continue
 
-                if not title_has_target_signal(job.title):
-                    if DEBUG:
-                        print("Excluded: title not relevant")
-                    continue
 
                 if job.fingerprint in jobs_seen:
                     if DEBUG:
