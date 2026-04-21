@@ -18,7 +18,7 @@ USER_AGENT = "job-signal-monitor/1.0"
 TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
-MIN_SCORE = 4
+MIN_SCORE = 3
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
 
@@ -708,10 +708,12 @@ def main() -> None:
                     print(f"Score: {score}")
                     print(f"Reasons: {reasons}")
 
-                if score < MIN_SCORE:
-                    if DEBUG:
-                        print("Excluded: below threshold")
-                    continue
+             if score < MIN_SCORE:
+    if DEBUG:
+        print("Excluded: below threshold")
+        print(f"Near-miss score: {score}")
+        print(f"Near-miss reasons: {reasons}")
+    continue
 
                 if DEBUG:
                     print("Included")
@@ -721,9 +723,12 @@ def main() -> None:
                 job.first_seen_at = run_started
                 strong_matches.append(job)
 
-        except Exception as exc:
-            source_name = source.get("label") or source.get("token") or source.get("handle") or "unknown"
-            errors.append(f"{source_name}: {str(exc)}")
+ except Exception as exc:
+    source_name = source.get("label") or source.get("token") or source.get("handle") or "unknown"
+    error_message = f"{source_name}: {str(exc)}"
+    errors.append(error_message)
+    if DEBUG:
+        print(f"Source error: {error_message}")
 
     strong_matches.sort(key=rank_key, reverse=True)
 
