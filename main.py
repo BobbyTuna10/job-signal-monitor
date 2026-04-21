@@ -447,21 +447,31 @@ def title_signal_score(title: str) -> tuple[int, list[str]]:
 
 def title_must_have_relevant_signal(title: str) -> bool:
     title_text = normalize_text(title)
-    must_have_terms = [
+    strong_terms = [
         "product management",
         "digital experience",
         "web experience",
         "experience platform",
         "digital platform",
-        "platform",
-        "content",
+        "content platform",
+        "content systems",
         "cms",
         "aem",
         "sitecore",
         "martech",
+    ]
+    medium_terms = [
+        "product",
+        "platform",
+        "digital",
+        "content",
         "web",
     ]
-    return any(term in title_text for term in must_have_terms)
+
+    strong_hit = any(term in title_text for term in strong_terms)
+    medium_hits = sum(1 for term in medium_terms if term in title_text)
+
+    return strong_hit or medium_hits >= 2
 def score_job(job: Job) -> tuple[int, list[str]]:
     haystack = normalize_text(
         " ".join(
