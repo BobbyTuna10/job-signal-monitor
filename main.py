@@ -30,6 +30,22 @@ SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "robinhood", "label": "Robinhood"},
     {"type": "greenhouse", "token": "airbnb", "label": "Airbnb"},
     {"type": "greenhouse", "token": "stripe", "label": "Stripe"},
+    {"type": "greenhouse", "token": "okta", "label": "Okta"},
+    {"type": "greenhouse", "token": "zscaler", "label": "Zscaler"},
+    {"type": "greenhouse", "token": "affirm", "label": "Affirm"},
+    {"type": "greenhouse", "token": "fivetran", "label": "Fivetran"},
+    {"type": "greenhouse", "token": "notion", "label": "Notion"},
+    {"type": "greenhouse", "token": "mondaycom", "label": "monday.com"},
+    {"type": "greenhouse", "token": "asana", "label": "Asana"},
+    {"type": "greenhouse", "token": "canva", "label": "Canva"},
+    {"type": "greenhouse", "token": "gusto", "label": "Gusto"},
+    {"type": "greenhouse", "token": "doordashusa", "label": "DoorDash"},
+    {"type": "greenhouse", "token": "dropbox", "label": "Dropbox"},
+    {"type": "greenhouse", "token": "reddit", "label": "Reddit"},
+    {"type": "greenhouse", "token": "discord", "label": "Discord"},
+    {"type": "greenhouse", "token": "databricks", "label": "Databricks"},
+    {"type": "greenhouse", "token": "elastic", "label": "Elastic"},
+    {"type": "greenhouse", "token": "hashicorp", "label": "HashiCorp"},
 ]
 
 
