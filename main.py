@@ -18,7 +18,7 @@ USER_AGENT = "job-signal-monitor/1.0"
 TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
-MIN_SCORE = 3
+MIN_SCORE = 5
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
 
@@ -34,10 +34,7 @@ SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "zscaler", "label": "Zscaler"},
     {"type": "greenhouse", "token": "affirm", "label": "Affirm"},
     {"type": "greenhouse", "token": "fivetran", "label": "Fivetran"},
-    {"type": "greenhouse", "token": "notion", "label": "Notion"},
-    {"type": "greenhouse", "token": "mondaycom", "label": "monday.com"},
     {"type": "greenhouse", "token": "asana", "label": "Asana"},
-    {"type": "greenhouse", "token": "canva", "label": "Canva"},
     {"type": "greenhouse", "token": "gusto", "label": "Gusto"},
     {"type": "greenhouse", "token": "doordashusa", "label": "DoorDash"},
     {"type": "greenhouse", "token": "dropbox", "label": "Dropbox"},
@@ -45,7 +42,6 @@ SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "discord", "label": "Discord"},
     {"type": "greenhouse", "token": "databricks", "label": "Databricks"},
     {"type": "greenhouse", "token": "elastic", "label": "Elastic"},
-    {"type": "greenhouse", "token": "hashicorp", "label": "HashiCorp"},
 ]
 
 
@@ -118,6 +114,17 @@ EXCLUDE_TERMS = [
     "finance",
     "legal",
     "privacy",
+    "marketing",
+    "product marketing",
+    "product design",
+    "design",
+    "designer",
+    "learning",
+    "technical programs",
+    "technical program",
+    "program manager",
+    "program management",
+    "ads platform",
 ]
 
 ATLANTA_TERMS = [
@@ -438,7 +445,23 @@ def title_signal_score(title: str) -> tuple[int, list[str]]:
 
     return points, reasons
 
-
+def title_must_have_relevant_signal(title: str) -> bool:
+    title_text = normalize_text(title)
+    must_have_terms = [
+        "product management",
+        "digital experience",
+        "web experience",
+        "experience platform",
+        "digital platform",
+        "platform",
+        "content",
+        "cms",
+        "aem",
+        "sitecore",
+        "martech",
+        "web",
+    ]
+    return any(term in title_text for term in must_have_terms)
 def score_job(job: Job) -> tuple[int, list[str]]:
     haystack = normalize_text(
         " ".join(
@@ -710,7 +733,10 @@ def main() -> None:
                     if DEBUG:
                         print(f"Excluded: term '{excluded_term}'")
                     continue
-
+                if not title_must_have_relevant_signal(job.title):
+                    if DEBUG:
+                        print("Excluded: title missing required signal")
+                    continue
                 if job.fingerprint in jobs_seen:
                     if DEBUG:
                         print("Excluded: already seen")
