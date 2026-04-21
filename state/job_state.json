@@ -270,6 +270,36 @@
       "source_type": "greenhouse",
       "title": "Senior Associate, Customer Experience New Launches"
     },
+    "greenhouse:DoorDash:7526295": {
+      "alerted_at": "2026-04-21T22:45:44.755299+00:00",
+      "first_seen_at": "2026-04-21T22:45:44.755299+00:00",
+      "job_id": "7526295",
+      "location": "Tempe, AZ; Atlanta, GA; Phoenix, AZ; Houston, TX; Dallas, TX Tampa, FL; Orlando, FL; Raleigh, NC; Charlotte, NC; Charleston, SC; Las Vegas, NV; Salt Lake City, UT",
+      "match_reasons": [
+        "Atlanta",
+        "Platform"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate Strategic Account Development Executive - Platform"
+    },
+    "greenhouse:DoorDash:7656490": {
+      "alerted_at": "2026-04-21T22:45:44.755299+00:00",
+      "first_seen_at": "2026-04-21T22:45:44.755299+00:00",
+      "job_id": "7656490",
+      "location": "New York, NY; San Francisco, CA; Los Angeles, CA; Chicago, IL; Atlanta, GA; Miami,  FL; Boston, MA;  Philadelphia, PA; Washington DC",
+      "match_reasons": [
+        "Atlanta",
+        "Platform"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Manager, Strategic Account Development - Platform"
+    },
     "greenhouse:DoorDash:7684688": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
       "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
@@ -628,6 +658,21 @@
       "source_type": "greenhouse",
       "title": "Senior Director, Product Marketing - Dash"
     },
+    "greenhouse:Dropbox:7614716": {
+      "alerted_at": "2026-04-21T22:45:44.755299+00:00",
+      "first_seen_at": "2026-04-21T22:45:44.755299+00:00",
+      "job_id": "7614716",
+      "location": "Remote - US: Select locations",
+      "match_reasons": [
+        "Product",
+        "Platform"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Product and Platform Partnerships, Business Development"
+    },
     "greenhouse:Dropbox:7642448": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
       "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
@@ -904,5 +949,5 @@
       "title": "Lead Experience Analytics & Optimisation Consultant"
     }
   },
-  "last_run_at": "2026-04-21T22:33:59.506270+00:00"
+  "last_run_at": "2026-04-21T22:45:44.755299+00:00"
 }
