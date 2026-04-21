@@ -109,6 +109,7 @@ EXCLUDE_TERMS = [
     "intern",
     "temporary",
     "risk",
+    "analytics",
     "governance lead",
     "enterprise risk",
     "compliance",
@@ -394,14 +395,33 @@ def location_allowed(location: str) -> bool:
     if not loc:
         return False
 
-    is_atlanta = contains_any(loc, ATLANTA_TERMS)
-    is_remote = "remote" in loc and contains_any(loc, REMOTE_TERMS)
+    atlanta_terms = [
+        "atlanta",
+        "atlanta, ga",
+        "georgia",
+        "smyrna",
+        "alpharetta",
+    ]
 
-    if "remote" in loc:
-        is_remote = True
+    remote_us_terms = [
+        "remote us",
+        "remote - us",
+        "remote - united states",
+        "remote united states",
+        "united states - remote",
+        "united states",
+        "u.s.",
+        "us only",
+        "usa",
+    ]
 
-    return is_atlanta or is_remote
+    if any(term in loc for term in atlanta_terms):
+        return True
 
+    if "remote" in loc and any(term in loc for term in remote_us_terms):
+        return True
+
+    return False
 
 def exclusion_hit(job: Job) -> Optional[str]:
     haystack = normalize_text(
@@ -429,18 +449,21 @@ def title_signal_score(title: str) -> tuple[int, list[str]]:
 
     title_terms = {
         "product": ("Product", 1),
-        "platform": ("Platform", 1),
+        "platform": ("Platform", 2),
         "digital": ("Digital", 1),
         "experience": ("Digital Experience", 1),
         "content": ("Content", 1),
-        "cms": ("CMS", 2),
-        "aem": ("AEM", 2),
-        "sitecore": ("Sitecore", 2),
-        "martech": ("Martech", 1),
-        "web": ("Web", 1),
+        "cms": ("CMS", 3),
+        "aem": ("AEM", 3),
+        "sitecore": ("Sitecore", 3),
+        "martech": ("Martech", 2),
+        "web": ("Web", 2),
         "strategy": ("Strategy", 1),
         "operations": ("Operations", 1),
         "transformation": ("Transformation", 1),
+        "product management": ("Product Management", 2),
+        "web experience": ("Web Experience", 3),
+        "digital experience": ("Digital Experience", 2),
     }
 
     for term, (label, score) in title_terms.items():
