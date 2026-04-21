@@ -18,7 +18,7 @@ USER_AGENT = "job-signal-monitor/1.0"
 TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
-MIN_SCORE = 4
+MIN_SCORE = 3
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
 
@@ -453,6 +453,7 @@ def title_signal_score(title: str) -> tuple[int, list[str]]:
 
 def title_must_have_relevant_signal(title: str) -> bool:
     title_text = normalize_text(title)
+
     strong_terms = [
         "product management",
         "digital experience",
@@ -466,18 +467,21 @@ def title_must_have_relevant_signal(title: str) -> bool:
         "sitecore",
         "martech",
     ]
+
     medium_terms = [
         "product",
         "platform",
         "digital",
         "content",
         "web",
+        "experience",
     ]
 
     strong_hit = any(term in title_text for term in strong_terms)
     medium_hits = sum(1 for term in medium_terms if term in title_text)
-
-    return strong_hit or medium_hits >= 2
+    
+    return strong_hit or medium_hits >= 1
+    
 def score_job(job: Job) -> tuple[int, list[str]]:
     haystack = normalize_text(
         " ".join(
