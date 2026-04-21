@@ -19,33 +19,17 @@ TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
 MIN_SCORE = 5
+DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
 
 # -----------------------------
 # Configure sources here
 # -----------------------------
-# Start with a small number of known boards, then add more after first success.
-# Examples:
-#
-# SOURCES = [
-#     {"type": "greenhouse", "token": "hubspot", "label": "HubSpot"},
-#     {"type": "lever", "handle": "netlify", "label": "Netlify"},
-# ]
-#
-# Greenhouse board URL pattern:
-# https://boards.greenhouse.io/<token>
-#
-# Lever board URL pattern:
-# https://jobs.lever.co/<handle>
-#
-# Keep this list small at first so you can validate output quality.
-
 SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "hubspot", "label": "HubSpot"},
     {"type": "greenhouse", "token": "robinhood", "label": "Robinhood"},
     {"type": "greenhouse", "token": "airbnb", "label": "Airbnb"},
     {"type": "greenhouse", "token": "stripe", "label": "Stripe"},
-    
     {"type": "lever", "handle": "contentful", "label": "Contentful"},
 ]
 
@@ -53,7 +37,6 @@ SOURCES: list[dict[str, str]] = [
 # -----------------------------
 # Weighted matching rules
 # -----------------------------
-
 HIGH_WEIGHT_STACK = {
     "aem": 4,
     "adobe experience manager": 4,
@@ -74,7 +57,7 @@ HIGH_WEIGHT_SENIORITY = {
 }
 
 MEDIUM_WEIGHT_PRODUCT = {
-     "product strategy": 2,
+    "product strategy": 2,
     "platform strategy": 2,
     "digital platform": 2,
     "product platform": 2,
@@ -121,8 +104,6 @@ EXCLUDE_TERMS = [
     "legal",
     "privacy",
 ]
-# Analyst can be too aggressive as a blanket exclusion, so leave it out for now.
-# Contract is also tricky because some ATSs use it as a work type, so leave it out for now.
 
 ATLANTA_TERMS = [
     "atlanta",
@@ -152,7 +133,6 @@ ATLANTA_BOOST_TERMS = [
 # -----------------------------
 # Models
 # -----------------------------
-
 @dataclass
 class Job:
     source_type: str
@@ -175,7 +155,6 @@ class Job:
 # -----------------------------
 # Utilities
 # -----------------------------
-
 def now_utc() -> datetime:
     return datetime.now(UTC)
 
@@ -236,7 +215,6 @@ def format_posted_at(posted_at: Optional[str]) -> Optional[str]:
     if not dt:
         return posted_at
 
-    # Keep it simple and readable. UTC is fine for v1.0.
     return dt.strftime("%Y-%m-%d %H:%M UTC")
 
 
@@ -251,10 +229,7 @@ def parse_datetime(value: Optional[str]) -> Optional[datetime]:
             return datetime.fromisoformat(value.replace("Z", "+00:00"))
         return datetime.fromisoformat(value)
     except ValueError:
-        pass
-
-    # Some APIs may return RFC2822-ish or other variants later; ignore for v1.0.
-    return None
+        return None
 
 
 def contains_any(text: str, terms: list[str]) -> bool:
@@ -266,10 +241,18 @@ def add_reason_once(reasons: list[str], label: str) -> None:
         reasons.append(label)
 
 
+def escape_html(value: str) -> str:
+    return (
+        value.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
 # -----------------------------
 # Source collectors
 # -----------------------------
-
 def fetch_greenhouse(token: str, label: Optional[str] = None) -> list[Job]:
     url = f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true"
     data = request_json(url)
@@ -279,9 +262,14 @@ def fetch_greenhouse(token: str, label: Optional[str] = None) -> list[Job]:
         title = item.get("title", "") or ""
         location = ((item.get("location") or {}).get("name")) or ""
         posted_at = item.get("updated_at")
+
         department = None
         if item.get("departments"):
-            department_names = [d.get("name", "") for d in item.get("departments", []) if d.get("name")]
+            department_names = [
+                d.get("name", "")
+                for d in item.get("departments", [])
+                if d.get("name")
+            ]
             department = ", ".join(department_names) if department_names else None
 
         snippet = trim_text(item.get("content"))
@@ -349,6 +337,10 @@ def fetch_jobs_for_source(source: dict[str, str]) -> list[Job]:
 
     raise ValueError(f"Unsupported source type: {source_type}")
 
+
+# -----------------------------
+# Filtering and scoring
+# -----------------------------
 def title_has_target_signal(title: str) -> bool:
     title_text = normalize_text(title)
     target_terms = [
@@ -364,9 +356,7 @@ def title_has_target_signal(title: str) -> bool:
         "web",
     ]
     return any(term in title_text for term in target_terms)
-# -----------------------------
-# Filtering and scoring
-# -----------------------------
+
 
 def location_allowed(location: str) -> bool:
     loc = normalize_text(location)
@@ -376,7 +366,6 @@ def location_allowed(location: str) -> bool:
     is_atlanta = contains_any(loc, ATLANTA_TERMS)
     is_remote = "remote" in loc and contains_any(loc, REMOTE_TERMS)
 
-    # Practical fallback: many postings say only "Remote, United States"
     if "remote" in loc:
         is_remote = True
 
@@ -384,11 +373,15 @@ def location_allowed(location: str) -> bool:
 
 
 def exclusion_hit(job: Job) -> Optional[str]:
-    haystack = normalize_text(" ".join([
-        job.title or "",
-        job.department or "",
-        job.description_snippet or "",
-    ]))
+    haystack = normalize_text(
+        " ".join(
+            [
+                job.title or "",
+                job.department or "",
+                job.description_snippet or "",
+            ]
+        )
+    )
 
     for term in EXCLUDE_TERMS:
         if term in haystack:
@@ -397,12 +390,16 @@ def exclusion_hit(job: Job) -> Optional[str]:
 
 
 def score_job(job: Job) -> tuple[int, list[str]]:
-    haystack = normalize_text(" ".join([
-        job.title or "",
-        job.location or "",
-        job.department or "",
-        job.description_snippet or "",
-    ]))
+    haystack = normalize_text(
+        " ".join(
+            [
+                job.title or "",
+                job.location or "",
+                job.department or "",
+                job.description_snippet or "",
+            ]
+        )
+    )
 
     score = 0
     reasons: list[str] = []
@@ -434,10 +431,10 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     for term, points in MEDIUM_WEIGHT_PRODUCT.items():
         if term in haystack:
             score += points
-            if term == "product":
-                add_reason_once(reasons, "Product")
-            elif "platform" in term:
+            if "platform" in term:
                 add_reason_once(reasons, "Platform")
+            elif "product" in term:
+                add_reason_once(reasons, "Product")
             else:
                 add_reason_once(reasons, "Product/Platform")
 
@@ -481,7 +478,10 @@ def rank_key(job: Job) -> tuple:
 
     director_bonus = 1 if "director" in title_text else 0
     senior_manager_bonus = 1 if "senior manager" in title_text else 0
-    cms_bonus = 1 if any(t in title_text for t in ["aem", "sitecore", "cms", "digital experience platform", "dxp"]) else 0
+    cms_bonus = 1 if any(
+        t in title_text
+        for t in ["aem", "sitecore", "cms", "digital experience platform", "dxp"]
+    ) else 0
     atlanta_bonus = 1 if contains_any(normalize_text(job.location), ATLANTA_BOOST_TERMS) else 0
 
     return (
@@ -497,7 +497,6 @@ def rank_key(job: Job) -> tuple:
 # -----------------------------
 # Digest
 # -----------------------------
-
 def render_email_html(
     strong_matches: list[Job],
     total_scanned: int,
@@ -577,19 +576,9 @@ def render_email_html(
     return subject, body
 
 
-def escape_html(value: str) -> str:
-    return (
-        value.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-    )
-
-
 # -----------------------------
 # Email
 # -----------------------------
-
 def send_email(subject: str, html_body: str) -> None:
     smtp_host = get_required_env("SMTP_HOST")
     smtp_port = int(get_required_env("SMTP_PORT"))
@@ -615,7 +604,6 @@ def send_email(subject: str, html_body: str) -> None:
 # -----------------------------
 # Main
 # -----------------------------
-
 def main() -> None:
     run_started = now_utc().isoformat()
     state = load_state()
@@ -632,7 +620,11 @@ def main() -> None:
           </body>
         </html>
         """
-        send_email(subject, body)
+        if not DEBUG:
+            send_email(subject, body)
+        else:
+            print(subject)
+            print(body)
         state["last_run_at"] = run_started
         save_state(state)
         print("No sources configured. Sent informational email.")
@@ -648,72 +640,46 @@ def main() -> None:
             total_scanned += len(jobs)
 
             for job in jobs:
-                for job in jobs:
-    if DEBUG:
-        print("\n--- NEW JOB ---")
-        print(f"Company: {job.source_company}")
-        print(f"Title: {job.title}")
-        print(f"Location: {job.location}")
+                if DEBUG:
+                    print("\n--- NEW JOB ---")
+                    print(f"Company: {job.source_company}")
+                    print(f"Title: {job.title}")
+                    print(f"Location: {job.location}")
 
-    # Location filter
-    if not location_allowed(job.location):
-        if DEBUG:
-            print("❌ Excluded: location")
-        continue
-
-    # Exclusion terms
-    excluded_term = exclusion_hit(job)
-    if excluded_term:
-        if DEBUG:
-            print(f"❌ Excluded: term '{excluded_term}'")
-        continue
-
-    # Title relevance check
-    if not title_has_target_signal(job.title):
-        if DEBUG:
-            print("❌ Excluded: title not relevant")
-        continue
-
-    # Deduplication
-    if job.fingerprint in jobs_seen:
-        if DEBUG:
-            print("❌ Excluded: already seen")
-        continue
-
-    # Scoring
-    score, reasons = score_job(job)
-
-    if DEBUG:
-        print(f"Score: {score}")
-        print(f"Reasons: {reasons}")
-
-    # Threshold check
-    if score < MIN_SCORE:
-        if DEBUG:
-            print("❌ Excluded: below threshold")
-        continue
-
-    # Final include
-    if DEBUG:
-        print("✅ INCLUDED")
-
-    job.score = score
-    job.match_reasons = reasons
-    job.first_seen_at = run_started
-    strong_matches.append(job)
                 if not location_allowed(job.location):
+                    if DEBUG:
+                        print("Excluded: location")
                     continue
 
                 excluded_term = exclusion_hit(job)
                 if excluded_term:
+                    if DEBUG:
+                        print(f"Excluded: term '{excluded_term}'")
+                    continue
+
+                if not title_has_target_signal(job.title):
+                    if DEBUG:
+                        print("Excluded: title not relevant")
                     continue
 
                 if job.fingerprint in jobs_seen:
+                    if DEBUG:
+                        print("Excluded: already seen")
                     continue
 
                 score, reasons = score_job(job)
+
+                if DEBUG:
+                    print(f"Score: {score}")
+                    print(f"Reasons: {reasons}")
+
                 if score < MIN_SCORE:
+                    if DEBUG:
+                        print("Excluded: below threshold")
                     continue
+
+                if DEBUG:
+                    print("Included")
 
                 job.score = score
                 job.match_reasons = reasons
@@ -732,9 +698,14 @@ def main() -> None:
         source_count=len(SOURCES),
         errors=errors,
     )
-    send_email(subject, html_body)
 
-    # Mark only alerted matches as seen, so they do not repeat.
+    if not DEBUG:
+        send_email(subject, html_body)
+    else:
+        print("\n=== EMAIL PREVIEW ===")
+        print(subject)
+        print(html_body[:2000])
+
     for job in strong_matches:
         jobs_seen[job.fingerprint] = {
             "source_type": job.source_type,
