@@ -42,15 +42,11 @@ MIN_SCORE = 5
 
 SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "hubspot", "label": "HubSpot"},
-    {"type": "greenhouse", "token": "shopify", "label": "Shopify"},
     {"type": "greenhouse", "token": "robinhood", "label": "Robinhood"},
     {"type": "greenhouse", "token": "airbnb", "label": "Airbnb"},
     {"type": "greenhouse", "token": "stripe", "label": "Stripe"},
     
-    {"type": "lever", "handle": "netlify", "label": "Netlify"},
     {"type": "lever", "handle": "contentful", "label": "Contentful"},
-    {"type": "lever", "handle": "twilio", "label": "Twilio"},
-    {"type": "lever", "handle": "datadog", "label": "Datadog"},
 ]
 
 
@@ -78,11 +74,11 @@ HIGH_WEIGHT_SENIORITY = {
 }
 
 MEDIUM_WEIGHT_PRODUCT = {
-    "product": 2,
-    "platform": 2,
-    "product strategy": 2,
+     "product strategy": 2,
     "platform strategy": 2,
     "digital platform": 2,
+    "product platform": 2,
+    "experience platform": 2,
 }
 
 MEDIUM_WEIGHT_EXPERIENCE = {
@@ -113,8 +109,20 @@ EXCLUDE_TERMS = [
     "recruiter",
     "intern",
     "temporary",
+    "risk",
+    "governance lead",
+    "enterprise risk",
+    "compliance",
+    "audit",
+    "security",
+    "data governance",
+    "treasury",
+    "finance",
+    "legal",
+    "privacy",
 ]
-
+if not title_has_target_signal(job.title):
+    continue
 # Analyst can be too aggressive as a blanket exclusion, so leave it out for now.
 # Contract is also tricky because some ATSs use it as a work type, so leave it out for now.
 
@@ -343,7 +351,21 @@ def fetch_jobs_for_source(source: dict[str, str]) -> list[Job]:
 
     raise ValueError(f"Unsupported source type: {source_type}")
 
-
+def title_has_target_signal(title: str) -> bool:
+    title_text = normalize_text(title)
+    target_terms = [
+        "product",
+        "platform",
+        "digital",
+        "experience",
+        "content",
+        "cms",
+        "aem",
+        "sitecore",
+        "martech",
+        "web",
+    ]
+    return any(term in title_text for term in target_terms)
 # -----------------------------
 # Filtering and scoring
 # -----------------------------
