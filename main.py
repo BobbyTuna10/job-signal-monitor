@@ -1,36 +1,569 @@
 import json
 import os
+import re
 import smtplib
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from html import unescape
 from pathlib import Path
+from typing import Any, Optional
+
+import requests
 
 
 STATE_PATH = Path("state/job_state.json")
+USER_AGENT = "job-signal-monitor/1.0"
+TIMEOUT = 20
+UTC = timezone.utc
+DISPLAY_CAP = 15
+MIN_SCORE = 5
 
 
-def load_state():
+# -----------------------------
+# Configure sources here
+# -----------------------------
+# Start with a small number of known boards, then add more after first success.
+# Examples:
+#
+# SOURCES = [
+#     {"type": "greenhouse", "token": "hubspot", "label": "HubSpot"},
+#     {"type": "lever", "handle": "netlify", "label": "Netlify"},
+# ]
+#
+# Greenhouse board URL pattern:
+# https://boards.greenhouse.io/<token>
+#
+# Lever board URL pattern:
+# https://jobs.lever.co/<handle>
+#
+# Keep this list small at first so you can validate output quality.
+
+SOURCES: list[dict[str, str]] = [
+    # {"type": "greenhouse", "token": "hubspot", "label": "HubSpot"},
+    # {"type": "greenhouse", "token": "adroll", "label": "AdRoll"},
+    # {"type": "lever", "handle": "netlify", "label": "Netlify"},
+]
+
+
+# -----------------------------
+# Weighted matching rules
+# -----------------------------
+
+HIGH_WEIGHT_STACK = {
+    "aem": 4,
+    "adobe experience manager": 4,
+    "sitecore": 4,
+    "cms": 4,
+    "content management system": 4,
+    "dxp": 4,
+    "digital experience platform": 4,
+    "content platform": 4,
+    "web experience": 4,
+}
+
+HIGH_WEIGHT_SENIORITY = {
+    "director": 3,
+    "senior manager": 3,
+    "head": 3,
+    "lead": 2,
+}
+
+MEDIUM_WEIGHT_PRODUCT = {
+    "product": 2,
+    "platform": 2,
+    "product strategy": 2,
+    "platform strategy": 2,
+    "digital platform": 2,
+}
+
+MEDIUM_WEIGHT_EXPERIENCE = {
+    "martech": 2,
+    "personalization": 2,
+    "customer experience": 2,
+    "digital experience": 2,
+    "experience platform": 2,
+    "adobe": 2,
+}
+
+LOW_WEIGHT_SUPPORT = {
+    "transformation": 1,
+    "product ops": 1,
+    "operating model": 1,
+    "governance": 1,
+    "roadmap": 1,
+    "cross-functional": 1,
+}
+
+EXCLUDE_TERMS = [
+    "engineer",
+    "engineering",
+    "architect",
+    "developer",
+    "sales",
+    "account executive",
+    "recruiter",
+    "intern",
+    "temporary",
+]
+
+# Analyst can be too aggressive as a blanket exclusion, so leave it out for now.
+# Contract is also tricky because some ATSs use it as a work type, so leave it out for now.
+
+ATLANTA_TERMS = [
+    "atlanta",
+    "georgia",
+    "smyrna",
+    "alpharetta",
+]
+
+REMOTE_TERMS = [
+    "remote",
+    "remote - us",
+    "remote us",
+    "united states",
+    "u.s.",
+    "us remote",
+    "work from home",
+]
+
+ATLANTA_BOOST_TERMS = [
+    "atlanta",
+    "hybrid atlanta",
+    "atlanta, ga",
+    "georgia",
+]
+
+
+# -----------------------------
+# Models
+# -----------------------------
+
+@dataclass
+class Job:
+    source_type: str
+    source_company: str
+    job_id: str
+    title: str
+    location: str
+    posted_at: Optional[str]
+    department: Optional[str]
+    description_snippet: Optional[str]
+    score: int = 0
+    match_reasons: Optional[list[str]] = None
+    first_seen_at: Optional[str] = None
+
+    @property
+    def fingerprint(self) -> str:
+        return f"{self.source_type}:{self.source_company}:{self.job_id}"
+
+
+# -----------------------------
+# Utilities
+# -----------------------------
+
+def now_utc() -> datetime:
+    return datetime.now(UTC)
+
+
+def load_state() -> dict[str, Any]:
     if not STATE_PATH.exists():
         return {"last_run_at": None, "jobs_seen": {}}
     with STATE_PATH.open("r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def save_state(state):
+def save_state(state: dict[str, Any]) -> None:
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     with STATE_PATH.open("w", encoding="utf-8") as f:
-        json.dump(state, f, indent=2)
+        json.dump(state, f, indent=2, sort_keys=True)
 
 
 def get_required_env(name: str) -> str:
     value = os.getenv(name)
     if not value:
         raise RuntimeError(f"Missing required environment variable: {name}")
-    return value
+    return value.strip()
 
 
-def send_email(subject: str, html_body: str):
+def request_json(url: str) -> Any:
+    response = requests.get(
+        url,
+        headers={"User-Agent": USER_AGENT},
+        timeout=TIMEOUT,
+    )
+    response.raise_for_status()
+    return response.json()
+
+
+def normalize_text(value: Optional[str]) -> str:
+    if not value:
+        return ""
+    value = unescape(value)
+    value = re.sub(r"<[^>]+>", " ", value)
+    value = re.sub(r"\s+", " ", value)
+    return value.strip().lower()
+
+
+def trim_text(value: Optional[str], limit: int = 400) -> Optional[str]:
+    if not value:
+        return None
+    value = re.sub(r"\s+", " ", unescape(value)).strip()
+    if len(value) <= limit:
+        return value
+    return value[: limit - 3] + "..."
+
+
+def format_posted_at(posted_at: Optional[str]) -> Optional[str]:
+    if not posted_at:
+        return None
+
+    dt = parse_datetime(posted_at)
+    if not dt:
+        return posted_at
+
+    # Keep it simple and readable. UTC is fine for v1.0.
+    return dt.strftime("%Y-%m-%d %H:%M UTC")
+
+
+def parse_datetime(value: Optional[str]) -> Optional[datetime]:
+    if not value:
+        return None
+
+    value = value.strip()
+
+    try:
+        if value.endswith("Z"):
+            return datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return datetime.fromisoformat(value)
+    except ValueError:
+        pass
+
+    # Some APIs may return RFC2822-ish or other variants later; ignore for v1.0.
+    return None
+
+
+def contains_any(text: str, terms: list[str]) -> bool:
+    return any(term in text for term in terms)
+
+
+def add_reason_once(reasons: list[str], label: str) -> None:
+    if label not in reasons:
+        reasons.append(label)
+
+
+# -----------------------------
+# Source collectors
+# -----------------------------
+
+def fetch_greenhouse(token: str, label: Optional[str] = None) -> list[Job]:
+    url = f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true"
+    data = request_json(url)
+
+    jobs: list[Job] = []
+    for item in data.get("jobs", []):
+        title = item.get("title", "") or ""
+        location = ((item.get("location") or {}).get("name")) or ""
+        posted_at = item.get("updated_at")
+        department = None
+        if item.get("departments"):
+            department_names = [d.get("name", "") for d in item.get("departments", []) if d.get("name")]
+            department = ", ".join(department_names) if department_names else None
+
+        snippet = trim_text(item.get("content"))
+
+        jobs.append(
+            Job(
+                source_type="greenhouse",
+                source_company=label or token,
+                job_id=str(item.get("id")),
+                title=title,
+                location=location,
+                posted_at=posted_at,
+                department=department,
+                description_snippet=snippet,
+            )
+        )
+    return jobs
+
+
+def fetch_lever(handle: str, label: Optional[str] = None) -> list[Job]:
+    url = f"https://api.lever.co/v0/postings/{handle}?mode=json"
+    data = request_json(url)
+
+    jobs: list[Job] = []
+    for item in data:
+        categories = item.get("categories") or {}
+        location = categories.get("location") or ""
+        workplace = categories.get("workplaceType") or ""
+        team = categories.get("team") or ""
+
+        combined_location = ", ".join(part for part in [location, workplace] if part)
+        department = ", ".join(part for part in [team] if part) or None
+
+        posted_at = None
+        created_at = item.get("createdAt")
+        if isinstance(created_at, (int, float)):
+            posted_at = datetime.fromtimestamp(created_at / 1000, tz=UTC).isoformat()
+
+        description_plain = item.get("descriptionPlain") or item.get("description") or ""
+        snippet = trim_text(description_plain)
+
+        jobs.append(
+            Job(
+                source_type="lever",
+                source_company=label or handle,
+                job_id=str(item.get("id")),
+                title=item.get("text", "") or "",
+                location=combined_location,
+                posted_at=posted_at,
+                department=department,
+                description_snippet=snippet,
+            )
+        )
+    return jobs
+
+
+def fetch_jobs_for_source(source: dict[str, str]) -> list[Job]:
+    source_type = source["type"].strip().lower()
+
+    if source_type == "greenhouse":
+        return fetch_greenhouse(source["token"], source.get("label"))
+
+    if source_type == "lever":
+        return fetch_lever(source["handle"], source.get("label"))
+
+    raise ValueError(f"Unsupported source type: {source_type}")
+
+
+# -----------------------------
+# Filtering and scoring
+# -----------------------------
+
+def location_allowed(location: str) -> bool:
+    loc = normalize_text(location)
+    if not loc:
+        return False
+
+    is_atlanta = contains_any(loc, ATLANTA_TERMS)
+    is_remote = "remote" in loc and contains_any(loc, REMOTE_TERMS)
+
+    # Practical fallback: many postings say only "Remote, United States"
+    if "remote" in loc:
+        is_remote = True
+
+    return is_atlanta or is_remote
+
+
+def exclusion_hit(job: Job) -> Optional[str]:
+    haystack = normalize_text(" ".join([
+        job.title or "",
+        job.department or "",
+        job.description_snippet or "",
+    ]))
+
+    for term in EXCLUDE_TERMS:
+        if term in haystack:
+            return term
+    return None
+
+
+def score_job(job: Job) -> tuple[int, list[str]]:
+    haystack = normalize_text(" ".join([
+        job.title or "",
+        job.location or "",
+        job.department or "",
+        job.description_snippet or "",
+    ]))
+
+    score = 0
+    reasons: list[str] = []
+
+    for term, points in HIGH_WEIGHT_STACK.items():
+        if term in haystack:
+            score += points
+            if term in {"aem", "adobe experience manager"}:
+                add_reason_once(reasons, "AEM")
+            elif term == "sitecore":
+                add_reason_once(reasons, "Sitecore")
+            elif term in {"cms", "content management system"}:
+                add_reason_once(reasons, "CMS")
+            else:
+                add_reason_once(reasons, "DXP")
+
+    for term, points in HIGH_WEIGHT_SENIORITY.items():
+        if term in haystack:
+            score += points
+            if term == "director":
+                add_reason_once(reasons, "Director")
+            elif term == "senior manager":
+                add_reason_once(reasons, "Senior Manager")
+            elif term == "head":
+                add_reason_once(reasons, "Head")
+            elif term == "lead":
+                add_reason_once(reasons, "Lead")
+
+    for term, points in MEDIUM_WEIGHT_PRODUCT.items():
+        if term in haystack:
+            score += points
+            if term == "product":
+                add_reason_once(reasons, "Product")
+            elif "platform" in term:
+                add_reason_once(reasons, "Platform")
+            else:
+                add_reason_once(reasons, "Product/Platform")
+
+    for term, points in MEDIUM_WEIGHT_EXPERIENCE.items():
+        if term in haystack:
+            score += points
+            if term == "martech":
+                add_reason_once(reasons, "Martech")
+            elif term in {"digital experience", "experience platform", "customer experience"}:
+                add_reason_once(reasons, "Digital Experience")
+            elif term == "adobe":
+                add_reason_once(reasons, "Adobe")
+            else:
+                add_reason_once(reasons, "Experience")
+
+    for term, points in LOW_WEIGHT_SUPPORT.items():
+        if term in haystack:
+            score += points
+            if term == "transformation":
+                add_reason_once(reasons, "Transformation")
+            elif term == "product ops":
+                add_reason_once(reasons, "Product Ops")
+            elif term == "governance":
+                add_reason_once(reasons, "Governance")
+            elif term == "roadmap":
+                add_reason_once(reasons, "Roadmap")
+            else:
+                add_reason_once(reasons, "Strategy/Ops")
+
+    location_text = normalize_text(job.location)
+    if contains_any(location_text, ATLANTA_BOOST_TERMS):
+        score += 1
+        add_reason_once(reasons, "Atlanta")
+
+    return score, reasons
+
+
+def rank_key(job: Job) -> tuple:
+    posted_dt = parse_datetime(job.posted_at) or datetime(1970, 1, 1, tzinfo=UTC)
+    title_text = normalize_text(job.title)
+
+    director_bonus = 1 if "director" in title_text else 0
+    senior_manager_bonus = 1 if "senior manager" in title_text else 0
+    cms_bonus = 1 if any(t in title_text for t in ["aem", "sitecore", "cms", "digital experience platform", "dxp"]) else 0
+    atlanta_bonus = 1 if contains_any(normalize_text(job.location), ATLANTA_BOOST_TERMS) else 0
+
+    return (
+        job.score,
+        director_bonus,
+        senior_manager_bonus,
+        cms_bonus,
+        atlanta_bonus,
+        posted_dt.timestamp(),
+    )
+
+
+# -----------------------------
+# Digest
+# -----------------------------
+
+def render_email_html(
+    strong_matches: list[Job],
+    total_scanned: int,
+    source_count: int,
+    errors: list[str],
+) -> tuple[str, str]:
+    extra_count = max(0, len(strong_matches) - DISPLAY_CAP)
+    shown_matches = strong_matches[:DISPLAY_CAP]
+
+    subject = f"Job Signal: {len(shown_matches)} strong matches"
+    if extra_count > 0:
+        subject += f" (+{extra_count} more)"
+
+    if not shown_matches:
+        body = f"""
+        <html>
+          <body>
+            <h2>Job Signal</h2>
+            <p>No new strong matches found this run.</p>
+            <p><strong>Sources checked:</strong> {source_count}</p>
+            <p><strong>Total jobs scanned:</strong> {total_scanned}</p>
+          </body>
+        </html>
+        """
+        return subject, body
+
+    cards = []
+    for job in shown_matches:
+        posted_line = ""
+        formatted_posted = format_posted_at(job.posted_at)
+        if formatted_posted:
+            posted_line = f"<div><strong>Posted:</strong> {formatted_posted}</div>"
+
+        match_reason = " + ".join(job.match_reasons or []) if job.match_reasons else "Strong fit"
+
+        cards.append(
+            f"""
+            <div style="margin-bottom:16px; padding:12px; border:1px solid #ddd; border-radius:8px;">
+              <div style="font-size:18px; font-weight:700;">{escape_html(job.source_company)}</div>
+              <div style="margin-top:4px;"><strong>{escape_html(job.title)}</strong></div>
+              <div style="margin-top:4px;">{escape_html(job.location or "Location not listed")}</div>
+              {posted_line}
+              <div style="margin-top:4px;"><strong>Match:</strong> {escape_html(match_reason)}</div>
+            </div>
+            """
+        )
+
+    error_block = ""
+    if errors:
+        items = "".join(f"<li>{escape_html(err)}</li>" for err in errors)
+        error_block = f"""
+        <hr>
+        <div>
+          <strong>Source issues</strong>
+          <ul>{items}</ul>
+        </div>
+        """
+
+    more_line = ""
+    if extra_count > 0:
+        more_line = f"<p><strong>+{extra_count} additional strong matches not shown</strong></p>"
+
+    body = f"""
+    <html>
+      <body>
+        <h2>Job Signal</h2>
+        <p><strong>Strong matches:</strong> {len(shown_matches)}</p>
+        {more_line}
+        <p><strong>Sources checked:</strong> {source_count}</p>
+        <p><strong>Total jobs scanned:</strong> {total_scanned}</p>
+        <hr>
+        {''.join(cards)}
+        {error_block}
+      </body>
+    </html>
+    """
+    return subject, body
+
+
+def escape_html(value: str) -> str:
+    return (
+        value.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
+# -----------------------------
+# Email
+# -----------------------------
+
+def send_email(subject: str, html_body: str) -> None:
     smtp_host = get_required_env("SMTP_HOST")
     smtp_port = int(get_required_env("SMTP_PORT"))
     smtp_user = get_required_env("SMTP_USER")
@@ -52,32 +585,98 @@ def send_email(subject: str, html_body: str):
         server.sendmail(email_from, recipients, msg.as_string())
 
 
-def main():
-    now = datetime.now(timezone.utc)
+# -----------------------------
+# Main
+# -----------------------------
 
+def main() -> None:
+    run_started = now_utc().isoformat()
     state = load_state()
-    previous_run = state.get("last_run_at")
+    jobs_seen: dict[str, Any] = state.setdefault("jobs_seen", {})
 
-    subject = "Job Signal Monitor Test"
-    html_body = f"""
-    <html>
-      <body>
-        <h2>Job Signal Monitor Test</h2>
-        <p>This is a successful test run from GitHub Actions.</p>
-        <p><strong>Current run (UTC):</strong> {now.isoformat()}</p>
-        <p><strong>Previous run:</strong> {previous_run}</p>
-        <p>No jobs are being scanned yet. This is just validating state + email.</p>
-      </body>
-    </html>
-    """
+    if not SOURCES:
+        subject = "Job Signal: 0 strong matches"
+        body = """
+        <html>
+          <body>
+            <h2>Job Signal</h2>
+            <p>The monitor ran successfully, but no sources are configured yet.</p>
+            <p>Add Greenhouse and Lever sources inside <code>main.py</code> and rerun.</p>
+          </body>
+        </html>
+        """
+        send_email(subject, body)
+        state["last_run_at"] = run_started
+        save_state(state)
+        print("No sources configured. Sent informational email.")
+        return
 
+    total_scanned = 0
+    errors: list[str] = []
+    strong_matches: list[Job] = []
+
+    for source in SOURCES:
+        try:
+            jobs = fetch_jobs_for_source(source)
+            total_scanned += len(jobs)
+
+            for job in jobs:
+                if not location_allowed(job.location):
+                    continue
+
+                excluded_term = exclusion_hit(job)
+                if excluded_term:
+                    continue
+
+                if job.fingerprint in jobs_seen:
+                    continue
+
+                score, reasons = score_job(job)
+                if score < MIN_SCORE:
+                    continue
+
+                job.score = score
+                job.match_reasons = reasons
+                job.first_seen_at = run_started
+                strong_matches.append(job)
+
+        except Exception as exc:
+            source_name = source.get("label") or source.get("token") or source.get("handle") or "unknown"
+            errors.append(f"{source_name}: {str(exc)}")
+
+    strong_matches.sort(key=rank_key, reverse=True)
+
+    subject, html_body = render_email_html(
+        strong_matches=strong_matches,
+        total_scanned=total_scanned,
+        source_count=len(SOURCES),
+        errors=errors,
+    )
     send_email(subject, html_body)
 
-    state["last_run_at"] = now.isoformat()
+    # Mark only alerted matches as seen, so they do not repeat.
+    for job in strong_matches:
+        jobs_seen[job.fingerprint] = {
+            "source_type": job.source_type,
+            "source_company": job.source_company,
+            "job_id": job.job_id,
+            "title": job.title,
+            "location": job.location,
+            "posted_at": job.posted_at,
+            "score": job.score,
+            "match_reasons": job.match_reasons,
+            "first_seen_at": job.first_seen_at,
+            "alerted_at": run_started,
+        }
+
+    state["last_run_at"] = run_started
     save_state(state)
 
-    print("Test email sent successfully.")
-    print(f"Updated state/job_state.json with last_run_at = {state['last_run_at']}")
+    print(f"Run complete at {run_started}")
+    print(f"Sources checked: {len(SOURCES)}")
+    print(f"Total jobs scanned: {total_scanned}")
+    print(f"Strong matches: {len(strong_matches)}")
+    print(f"Errors: {len(errors)}")
 
 
 if __name__ == "__main__":
