@@ -46,7 +46,6 @@ SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "dept", "label": "DEPT"},
     {"type": "greenhouse", "token": "neweratech", "label": "New Era Technology"},
     {"type": "greenhouse", "token": "credera", "label": "Credera"},
-    {"type": "greenhouse", "token": "vaynermedia", "label": "VaynerMedia"},
 ]
 
 
