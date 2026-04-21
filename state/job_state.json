@@ -855,7 +855,54 @@
       "source_company": "Stripe",
       "source_type": "greenhouse",
       "title": "Enterprise Risk Management Lead"
+    },
+    "greenhouse:Valtech:4789849101": {
+      "alerted_at": "2026-04-21T22:33:59.506270+00:00",
+      "first_seen_at": "2026-04-21T22:33:59.506270+00:00",
+      "job_id": "4789849101",
+      "location": "United States - Remote",
+      "match_reasons": [
+        "Director",
+        "Digital Experience",
+        "Strategy"
+      ],
+      "posted_at": "2026-03-31T12:13:04-04:00",
+      "score": 5,
+      "source_company": "Valtech",
+      "source_type": "greenhouse",
+      "title": "Strategy Director (Experience Strategy) Healthcare"
+    },
+    "greenhouse:Valtech:4790570101": {
+      "alerted_at": "2026-04-21T22:33:59.506270+00:00",
+      "first_seen_at": "2026-04-21T22:33:59.506270+00:00",
+      "job_id": "4790570101",
+      "location": "Canada - Remote",
+      "match_reasons": [
+        "Director",
+        "Digital Experience",
+        "Strategy"
+      ],
+      "posted_at": "2026-03-27T16:33:18-04:00",
+      "score": 5,
+      "source_company": "Valtech",
+      "source_type": "greenhouse",
+      "title": "Strategy Director (Experience Strategy) Healthcare"
+    },
+    "greenhouse:Valtech:4836732101": {
+      "alerted_at": "2026-04-21T22:33:59.506270+00:00",
+      "first_seen_at": "2026-04-21T22:33:59.506270+00:00",
+      "job_id": "4836732101",
+      "location": "United Kingdom - Remote",
+      "match_reasons": [
+        "Lead",
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-14T07:17:12-04:00",
+      "score": 3,
+      "source_company": "Valtech",
+      "source_type": "greenhouse",
+      "title": "Lead Experience Analytics & Optimisation Consultant"
     }
   },
-  "last_run_at": "2026-04-21T22:28:45.108450+00:00"
+  "last_run_at": "2026-04-21T22:33:59.506270+00:00"
 }
