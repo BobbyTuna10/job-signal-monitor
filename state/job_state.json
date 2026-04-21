@@ -1,5 +1,812 @@
 {
   "jobs_seen": {
+    "greenhouse:Affirm:7518839003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7518839003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Director",
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 6,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Product Marketing"
+    },
+    "greenhouse:Affirm:7518841003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7518841003",
+      "location": "Remote Canada",
+      "match_reasons": [
+        "Director",
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 6,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Product Marketing"
+    },
+    "greenhouse:Affirm:7546361003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7546361003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Director",
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 6,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Operations"
+    },
+    "greenhouse:Affirm:7583340003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7583340003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 3,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Operations Enablement Manager (Disputes Management)"
+    },
+    "greenhouse:Affirm:7583342003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7583342003",
+      "location": "Remote Canada",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 3,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Operations Enablement Manager (Disputes Management)"
+    },
+    "greenhouse:Affirm:7600904003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7600904003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Senior Manager",
+        "Lead"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 5,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Learning"
+    },
+    "greenhouse:Affirm:7601069003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7601069003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Director",
+        "Product"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 4,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Product Management"
+    },
+    "greenhouse:Affirm:7601071003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7601071003",
+      "location": "Remote Canada",
+      "match_reasons": [
+        "Director",
+        "Product"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 4,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Product Management"
+    },
+    "greenhouse:Affirm:7685570003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7685570003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Director",
+        "Lead"
+      ],
+      "posted_at": "2026-04-09T16:20:37-04:00",
+      "score": 5,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Technical Programs"
+    },
+    "greenhouse:Affirm:7685758003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7685758003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-08T17:10:17-04:00",
+      "score": 3,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Operations Enablement Lead"
+    },
+    "greenhouse:Affirm:7685760003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7685760003",
+      "location": "Remote Canada",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-08T17:10:18-04:00",
+      "score": 3,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Operations Enablement Lead"
+    },
+    "greenhouse:Affirm:7694934003": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7694934003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T16:04:17-04:00",
+      "score": 3,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Product Marketing Manager"
+    },
+    "greenhouse:Discord:8190428002": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "8190428002",
+      "location": "San Francisco Bay Area or Remote (U.S.)",
+      "match_reasons": [
+        "Senior Manager",
+        "Product"
+      ],
+      "posted_at": "2026-04-17T18:09:35-04:00",
+      "score": 4,
+      "source_company": "Discord",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Product Design - B2B2C"
+    },
+    "greenhouse:Discord:8401077002": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "8401077002",
+      "location": "San Francisco, CA or Remote (U.S.)",
+      "match_reasons": [
+        "Senior Manager",
+        "Product"
+      ],
+      "posted_at": "2026-04-17T18:09:36-04:00",
+      "score": 4,
+      "source_company": "Discord",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Product Design - Engagement"
+    },
+    "greenhouse:Discord:8407814002": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "8407814002",
+      "location": "San Francisco Bay Area or Remote (U.S.)",
+      "match_reasons": [
+        "Senior Manager"
+      ],
+      "posted_at": "2026-04-17T18:09:36-04:00",
+      "score": 3,
+      "source_company": "Discord",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Ads, Revenue & Commerce Policy"
+    },
+    "greenhouse:Discord:8483227002": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "8483227002",
+      "location": "San Francisco Bay Area or Remote (U.S.)",
+      "match_reasons": [
+        "Director"
+      ],
+      "posted_at": "2026-04-17T18:09:36-04:00",
+      "score": 3,
+      "source_company": "Discord",
+      "source_type": "greenhouse",
+      "title": "Director, Corporate Development"
+    },
+    "greenhouse:DoorDash:7248556": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7248556",
+      "location": "Atlanta, GA",
+      "match_reasons": [
+        "Lead",
+        "Atlanta"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Shift Lead - Underwood Hills"
+    },
+    "greenhouse:DoorDash:7368928": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7368928",
+      "location": "San Francisco, CA; New York, NY; Los Angeles, CA; Seattle, WA; Washington D.C.; Chicago, IL; United States - Remote",
+      "match_reasons": [
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Senior Associate, Customer Experience New Launches"
+    },
+    "greenhouse:DoorDash:7684688": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7684688",
+      "location": "San Francisco, CA; New York, NY; Chicago, IL; Seattle, WA; Phoenix, AZ; United States - Remote",
+      "match_reasons": [
+        "Digital Experience",
+        "Strategy"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 4,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate, Customer Experience- Data & Strategy"
+    },
+    "greenhouse:DoorDash:7684700": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7684700",
+      "location": "Chicago,IL; Tempe, AZ; Austin, TX; Denver, CO; Philadelphia, PA; Miami, FL; Atlanta, GA",
+      "match_reasons": [
+        "Atlanta",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-21T12:20:10-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate, Strategy and Operations - Emerging Fraud"
+    },
+    "greenhouse:DoorDash:7717824": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7717824",
+      "location": "New York, NY; Washington D.C.; Los Angeles, CA; San Francisco, CA; Chicago, IL; Denver, CO; Seattle, WA; Phoenix AZ; Boston MA; United States - Remote",
+      "match_reasons": [
+        "Director"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Director, SMB Account Management \u2013 New Verticals"
+    },
+    "greenhouse:DoorDash:7739680": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7739680",
+      "location": "New York, NY; San Francisco, CA; Seattle, WA; Los Angeles, CA; Sunnyvale, CA; Chicago, IL; Austin, TX; Denver, CO; Atlanta, GA; Miami, FL; Boston, MA; Washington D.C.",
+      "match_reasons": [
+        "Senior Manager",
+        "Atlanta"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 4,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, B2B Performance Marketing"
+    },
+    "greenhouse:DoorDash:7740301": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7740301",
+      "location": "New York, NY; San Francisco, CA; Chicago, IL; Seattle, WA; Atlanta, GA; Austin, TX; Denver, CO",
+      "match_reasons": [
+        "Atlanta",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate Manager, Merchant Quality Strategy & Operations"
+    },
+    "greenhouse:DoorDash:7747365": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7747365",
+      "location": "Baltimore, MD; Philadelphia, PA; Miami, FL; Atlanta, GA; United States - Remote",
+      "match_reasons": [
+        "Lead",
+        "Atlanta"
+      ],
+      "posted_at": "2026-04-15T18:11:45-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Employer Brand & Recruitment Marketing Lead"
+    },
+    "greenhouse:DoorDash:7749466": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7749466",
+      "location": "New York, NY; San Francisco, CA; Seattle, WA; Los Angeles, CA; Sunnyvale, CA; Chicago, IL; Austin, TX; Denver, CO; Atlanta, GA; Miami, FL; Boston, MA; Washington, DC",
+      "match_reasons": [
+        "Senior Manager",
+        "Atlanta"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 4,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Lifecycle Marketing, B2B"
+    },
+    "greenhouse:DoorDash:7767375": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7767375",
+      "location": "United States - Remote",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Team Lead, Live Operations"
+    },
+    "greenhouse:DoorDash:7767432": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7767432",
+      "location": "Seattle, WA; Chicago, IL; Los Angeles, CA; United States - Remote",
+      "match_reasons": [
+        "Platform",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Manager, Strategy & Operations - Commerce Platform New Verticals"
+    },
+    "greenhouse:DoorDash:7773960": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7773960",
+      "location": "United States - Remote",
+      "match_reasons": [
+        "Digital Experience",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 5,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate Manager, Strategy & Operations \u2013 Customer Experience "
+    },
+    "greenhouse:DoorDash:7776087": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7776087",
+      "location": "New York, NY; Chicago, IL; Atlanta, GA; Los Angeles, CA; Dallas, TX",
+      "match_reasons": [
+        "Atlanta",
+        "Product",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 4,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate, Dasher & Logistics - Product Operations Strategy & Operations"
+    },
+    "greenhouse:DoorDash:7793233": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7793233",
+      "location": "Los Angeles, CA; New York, NY; Atlanta, GA; Chicago, IL",
+      "match_reasons": [
+        "Head",
+        "Atlanta"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 4,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Head of Transportation"
+    },
+    "greenhouse:DoorDash:7818935": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7818935",
+      "location": "San Francisco, CA; New York, NY; Seattle, WA; Chicago, IL; Atlanta, GA; Denver, CO; Boston, MA; Austin, TX; Dallas, TX; Houston, TX; Miami, FL",
+      "match_reasons": [
+        "Director",
+        "Atlanta",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-16T15:49:25-04:00",
+      "score": 6,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Director Strategy & Operations, Local Markets "
+    },
+    "greenhouse:Dropbox:6874591": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "6874591",
+      "location": "Remote - US: All locations",
+      "match_reasons": [
+        "Director",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 4,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Director of Product Design"
+    },
+    "greenhouse:Dropbox:6874596": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "6874596",
+      "location": "Remote - Canada: Select locations",
+      "match_reasons": [
+        "Director",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 4,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Director of Product Design "
+    },
+    "greenhouse:Dropbox:7416008": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7416008",
+      "location": "Remote - US: All locations",
+      "match_reasons": [
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Staff Product Designer, New Initiatives"
+    },
+    "greenhouse:Dropbox:7416012": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7416012",
+      "location": "Remote - Canada: Select locations",
+      "match_reasons": [
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Staff Product Designer, New Initiatives"
+    },
+    "greenhouse:Dropbox:7571497": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7571497",
+      "location": "Remote - US: Select locations",
+      "match_reasons": [
+        "Senior Manager"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Talent Management"
+    },
+    "greenhouse:Dropbox:7571498": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7571498",
+      "location": "Remote - Canada: Select locations",
+      "match_reasons": [
+        "Senior Manager"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Talent Management"
+    },
+    "greenhouse:Dropbox:7574740": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7574740",
+      "location": "Remote - US: Select locations",
+      "match_reasons": [
+        "DXP",
+        "Senior Manager",
+        "Product",
+        "Digital Experience",
+        "Web"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 10,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Product Management - Web Experience"
+    },
+    "greenhouse:Dropbox:7574741": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7574741",
+      "location": "Remote - Canada: Select locations",
+      "match_reasons": [
+        "DXP",
+        "Senior Manager",
+        "Product",
+        "Digital Experience",
+        "Web"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 10,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Product Management - Web Experience"
+    },
+    "greenhouse:Dropbox:7603883": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7603883",
+      "location": "Remote - US: All locations",
+      "match_reasons": [
+        "Director",
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 6,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Product Marketing - Dash"
+    },
+    "greenhouse:Dropbox:7603888": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7603888",
+      "location": "Remote - Canada: Select locations",
+      "match_reasons": [
+        "Director",
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 6,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Product Marketing - Dash"
+    },
+    "greenhouse:Dropbox:7642448": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7642448",
+      "location": "Remote - US: Select locations",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-20T08:24:11-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Company Operations Lead"
+    },
+    "greenhouse:Dropbox:7642449": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7642449",
+      "location": "Remote - Canada: Select locations",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-20T08:24:12-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Company Operations Lead"
+    },
+    "greenhouse:Dropbox:7729243": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7729243",
+      "location": "Remote - US: Select locations",
+      "match_reasons": [
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Product Manager, Growth"
+    },
+    "greenhouse:Dropbox:7729246": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7729246",
+      "location": "Remote - Canada: Select locations",
+      "match_reasons": [
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Product Manager, Growth"
+    },
+    "greenhouse:Gusto:7826266": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7826266",
+      "location": "Denver, CO;San Francisco, CA;New York, NY;Las Vegas, NV;Atlanta, GA;Phoenix, AZ; Toronto, ON; Chicago, IL",
+      "match_reasons": [
+        "Lead",
+        "Atlanta"
+      ],
+      "posted_at": "2026-04-17T15:22:50-04:00",
+      "score": 3,
+      "source_company": "Gusto",
+      "source_type": "greenhouse",
+      "title": "Senior Paid Social Lead"
+    },
+    "greenhouse:Reddit:7430544": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7430544",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Director"
+      ],
+      "posted_at": "2026-03-20T17:12:28-04:00",
+      "score": 3,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Director of Machine Learning, Safety & Mods"
+    },
+    "greenhouse:Reddit:7572902": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7572902",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Senior Manager"
+      ],
+      "posted_at": "2026-03-19T11:36:31-04:00",
+      "score": 3,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Tax Planning Senior Manager"
+    },
+    "greenhouse:Reddit:7624178": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7624178",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Director",
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-01T03:21:40-04:00",
+      "score": 4,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Sr. Director of Design, Member Experiences"
+    },
+    "greenhouse:Reddit:7644191": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7644191",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Director",
+        "Content"
+      ],
+      "posted_at": "2026-04-01T03:21:40-04:00",
+      "score": 4,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Director of Design, Content Ecosystem"
+    },
+    "greenhouse:Reddit:7666317": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7666317",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Director",
+        "Platform"
+      ],
+      "posted_at": "2026-04-01T03:21:39-04:00",
+      "score": 4,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Director of Design, Ads Platform"
+    },
+    "greenhouse:Reddit:7682201": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7682201",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-03-19T11:36:32-04:00",
+      "score": 3,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Product Communications Lead, Global"
+    },
+    "greenhouse:Reddit:7746311": {
+      "alerted_at": "2026-04-21T18:48:51.343780+00:00",
+      "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
+      "job_id": "7746311",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Director",
+        "Product",
+        "Platform"
+      ],
+      "posted_at": "2026-04-03T15:29:57-04:00",
+      "score": 5,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Senior Director of Product, Ads Platform"
+    },
     "greenhouse:Stripe:5922987": {
       "alerted_at": "2026-04-21T13:55:59.112384+00:00",
       "first_seen_at": "2026-04-21T13:55:59.112384+00:00",
@@ -50,5 +857,5 @@
       "title": "Enterprise Risk Management Lead"
     }
   },
-  "last_run_at": "2026-04-21T18:42:38.890982+00:00"
+  "last_run_at": "2026-04-21T18:48:51.343780+00:00"
 }
