@@ -18,7 +18,7 @@ USER_AGENT = "job-signal-monitor/1.0"
 TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
-MIN_SCORE = 3
+MIN_SCORE = 4
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
 
@@ -800,10 +800,6 @@ def main() -> None:
                         print("Excluded: business-function title")
                     continue
 
-                if not title_must_have_relevant_signal(job.title):
-                    if DEBUG:
-                        print("Excluded: title missing required signal")
-                    continue
                 if job.fingerprint in jobs_seen:
                     if DEBUG:
                         print("Excluded: already seen")
