@@ -1,4 +1,54 @@
 {
-  "jobs_seen": {},
-  "last_run_at": "2026-04-21T13:46:25.547512+00:00"
+  "jobs_seen": {
+    "greenhouse:Stripe:5922987": {
+      "alerted_at": "2026-04-21T13:55:59.112384+00:00",
+      "first_seen_at": "2026-04-21T13:55:59.112384+00:00",
+      "job_id": "5922987",
+      "location": "Remote US",
+      "match_reasons": [
+        "Lead",
+        "Platform",
+        "Governance"
+      ],
+      "posted_at": "2026-04-16T11:05:52-04:00",
+      "score": 5,
+      "source_company": "Stripe",
+      "source_type": "greenhouse",
+      "title": "Data Governance Lead"
+    },
+    "greenhouse:Stripe:7657938": {
+      "alerted_at": "2026-04-21T13:55:59.112384+00:00",
+      "first_seen_at": "2026-04-21T13:55:59.112384+00:00",
+      "job_id": "7657938",
+      "location": "NYC, Seattle, San Francisco, Chicago, Atlanta, Remote",
+      "match_reasons": [
+        "Product",
+        "Platform",
+        "Product/Platform",
+        "Atlanta"
+      ],
+      "posted_at": "2026-04-16T11:05:52-04:00",
+      "score": 7,
+      "source_company": "Stripe",
+      "source_type": "greenhouse",
+      "title": "Product Strategy & Operations, Link"
+    },
+    "greenhouse:Stripe:7742552": {
+      "alerted_at": "2026-04-21T13:55:59.112384+00:00",
+      "first_seen_at": "2026-04-21T13:55:59.112384+00:00",
+      "job_id": "7742552",
+      "location": "Atlanta, GA",
+      "match_reasons": [
+        "Lead",
+        "Platform",
+        "Atlanta"
+      ],
+      "posted_at": "2026-04-16T11:05:52-04:00",
+      "score": 5,
+      "source_company": "Stripe",
+      "source_type": "greenhouse",
+      "title": "Enterprise Risk Management Lead"
+    }
+  },
+  "last_run_at": "2026-04-21T13:55:59.112384+00:00"
 }
