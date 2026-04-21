@@ -425,8 +425,6 @@ def title_signal_score(title: str) -> tuple[int, list[str]]:
 
 
 def score_job(job: Job) -> tuple[int, list[str]]:
-
-def score_job(job: Job) -> tuple[int, list[str]]:
     haystack = normalize_text(
         " ".join(
             [
