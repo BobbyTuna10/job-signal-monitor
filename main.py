@@ -121,8 +121,6 @@ EXCLUDE_TERMS = [
     "legal",
     "privacy",
 ]
-if not title_has_target_signal(job.title):
-    continue
 # Analyst can be too aggressive as a blanket exclusion, so leave it out for now.
 # Contract is also tricky because some ATSs use it as a work type, so leave it out for now.
 
@@ -650,6 +648,59 @@ def main() -> None:
             total_scanned += len(jobs)
 
             for job in jobs:
+                for job in jobs:
+    if DEBUG:
+        print("\n--- NEW JOB ---")
+        print(f"Company: {job.source_company}")
+        print(f"Title: {job.title}")
+        print(f"Location: {job.location}")
+
+    # Location filter
+    if not location_allowed(job.location):
+        if DEBUG:
+            print("❌ Excluded: location")
+        continue
+
+    # Exclusion terms
+    excluded_term = exclusion_hit(job)
+    if excluded_term:
+        if DEBUG:
+            print(f"❌ Excluded: term '{excluded_term}'")
+        continue
+
+    # Title relevance check
+    if not title_has_target_signal(job.title):
+        if DEBUG:
+            print("❌ Excluded: title not relevant")
+        continue
+
+    # Deduplication
+    if job.fingerprint in jobs_seen:
+        if DEBUG:
+            print("❌ Excluded: already seen")
+        continue
+
+    # Scoring
+    score, reasons = score_job(job)
+
+    if DEBUG:
+        print(f"Score: {score}")
+        print(f"Reasons: {reasons}")
+
+    # Threshold check
+    if score < MIN_SCORE:
+        if DEBUG:
+            print("❌ Excluded: below threshold")
+        continue
+
+    # Final include
+    if DEBUG:
+        print("✅ INCLUDED")
+
+    job.score = score
+    job.match_reasons = reasons
+    job.first_seen_at = run_started
+    strong_matches.append(job)
                 if not location_allowed(job.location):
                     continue
 
