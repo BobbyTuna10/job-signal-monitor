@@ -18,7 +18,7 @@ USER_AGENT = "job-signal-monitor/1.0"
 TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
-MIN_SCORE = 3
+MIN_SCORE = 4
 MAX_JOB_AGE_DAYS = 10
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 IGNORE_SEEN = os.getenv("IGNORE_SEEN", "false").lower() == "true"
@@ -706,6 +706,15 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     if contains_any(location_text, ATLANTA_BOOST_TERMS):
         score += 1
         add_reason_once(reasons, "Atlanta")
+    if any(term in location_text for term in [
+        "canada",
+        "bc",
+        "ontario",
+        "toronto",
+]):
+        if DEBUG:
+            print("Excluded: non-US geo")
+        continue
     # Add title-based scoring
     title_points, title_reasons = title_signal_score(job.title)
     score += title_points
