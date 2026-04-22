@@ -467,7 +467,10 @@ def title_penalty_score(title: str) -> tuple[int, list[str]]:
         "martech",
         "web",
     ])
-
+    if "operations" in title_text:
+        penalty -= 2
+    if "strategy" in title_text:
+        penalty -= 1
     if not has_strong_target:
         if "operations" in title_text:
             penalty -= 1
