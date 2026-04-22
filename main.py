@@ -649,7 +649,7 @@ def score_job(job: Job) -> tuple[int, list[str]]:
             "aem", "sitecore", "cms", "dxp", "digital experience"
         ]
     ):
-    return 0, []
+        return 0, []
     return score, reasons
 
 
