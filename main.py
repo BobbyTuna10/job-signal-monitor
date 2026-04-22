@@ -613,7 +613,18 @@ def score_job(job: Job) -> tuple[int, list[str]]:
             ]
         )
     )
-
+    has_domain_signal = any(term in haystack for term in [
+        "platform",
+        "product",
+        "digital",
+        "experience",
+        "web",
+        "content",
+        "cms",
+        "aem",
+        "sitecore",
+        "martech",
+    ])
     score = 0
     reasons: list[str] = []
 
@@ -630,16 +641,24 @@ def score_job(job: Job) -> tuple[int, list[str]]:
                 add_reason_once(reasons, "DXP")
 
     for term, points in HIGH_WEIGHT_SENIORITY.items():
-        if term in haystack:
+        if term in haystack and has_domain_signal:
             score += points
-            if term == "director":
-                add_reason_once(reasons, "Director")
-            elif term == "senior manager":
-                add_reason_once(reasons, "Senior Manager")
-            elif term == "head":
-                add_reason_once(reasons, "Head")
-            elif term == "lead":
-                add_reason_once(reasons, "Lead")
+        if term == "director":
+            add_reason_once(reasons, "Director")
+        elif term == "senior manager":
+            add_reason_once(reasons, "Senior Manager")
+        elif term == "head":
+            add_reason_once(reasons, "Head")
+        elif term == "lead":
+            add_reason_once(reasons, "Lead")
+        if term == "director":
+            add_reason_once(reasons, "Director")
+        elif term == "senior manager":
+            add_reason_once(reasons, "Senior Manager")
+        elif term == "head":
+            add_reason_once(reasons, "Head")
+        elif term == "lead":
+            add_reason_once(reasons, "Lead")
 
     for term, points in MEDIUM_WEIGHT_PRODUCT.items():
         if term in haystack:
@@ -885,10 +904,6 @@ def main() -> None:
                         print("Excluded: business-function title")
                     continue
 
-                if not has_required_domain_signal(job.title):
-                    if DEBUG:
-                        print("Excluded: missing domain signal")
-                    continue
 
                 if job.fingerprint in jobs_seen and not IGNORE_SEEN:
                     if DEBUG:
