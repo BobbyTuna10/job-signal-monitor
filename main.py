@@ -112,7 +112,7 @@ HIGH_WEIGHT_SENIORITY = {
     "director": 3,
     "senior manager": 3,
     "head": 3,
-    "lead": 2,
+    "lead": 1,
 }
 
 MEDIUM_WEIGHT_PRODUCT = {
@@ -199,6 +199,13 @@ EXCLUDE_TERMS = [
     "communications",
     "fraud",
     "company operations",
+    "people technology",
+    "product operations",
+    "business operations",
+    "enablement",
+    "talent",
+    "hr",
+    "recruiting",
 ]
 
 ATLANTA_TERMS = [
@@ -612,18 +619,16 @@ def score_job(job: Job) -> tuple[int, list[str]]:
             ]
         )
     )
-    has_domain_signal = any(term in haystack for term in [
-        "platform",
-        "product",
-        "digital",
-        "experience",
-        "web",
-        "content",
-        "cms",
-        "aem",
-        "sitecore",
-        "martech",
-    ])
+has_domain_signal = any(term in haystack for term in [
+    "product",
+    "platform",
+    "digital experience",
+    "web",
+    "cms",
+    "aem",
+    "sitecore",
+    "martech",
+])
     score = 0
     reasons: list[str] = []
 
@@ -790,6 +795,7 @@ def render_email_html(
             <div style="margin-bottom:16px; padding:12px; border:1px solid #ddd; border-radius:8px;">
               <div style="font-size:18px; font-weight:700;">{escape_html(job.source_company)}</div>
               <div style="margin-top:4px;"><strong>{escape_html(job.title)}</strong></div>
+              <div><strong>Score:</strong> {job.score}</div>
               <div style="margin-top:4px;">{escape_html(job.location or "Location not listed")}</div>
               {posted_line}
               <div style="margin-top:4px;"><strong>Match:</strong> {escape_html(match_reason)}</div>
