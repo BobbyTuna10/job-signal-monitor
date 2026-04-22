@@ -827,7 +827,7 @@ def main() -> None:
                 if job.fingerprint in jobs_seen:
                     if DEBUG:
                         print("Excluded: already seen")
-                continue
+                    continue
 
                 score, reasons = score_job(job)
 
