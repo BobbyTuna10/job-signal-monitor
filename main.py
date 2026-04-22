@@ -19,6 +19,7 @@ TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
 MIN_SCORE = 3
+MAX_JOB_AGE_DAYS = 15
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 IGNORE_SEEN = os.getenv("IGNORE_SEEN", "false").lower() == "true"
 
@@ -47,14 +48,28 @@ SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "dept", "label": "DEPT"},
     {"type": "greenhouse", "token": "neweratech", "label": "New Era Technology"},
     {"type": "greenhouse", "token": "credera", "label": "Credera"},
-    {"type": "greenhouse", "token": "shopify", "label": "Shopify"},
-    {"type": "greenhouse", "token": "squareup", "label": "Block / Square"},
+    #{"type": "greenhouse", "token": "shopify", "label": "Shopify"},
+    #{"type": "greenhouse", "token": "squareup", "label": "Block / Square"},
     {"type": "greenhouse", "token": "twilio", "label": "Twilio"},
-    {"type": "greenhouse", "token": "segment", "label": "Segment"},
+    #{"type": "greenhouse", "token": "segment", "label": "Segment"},
     {"type": "greenhouse", "token": "amplitude", "label": "Amplitude"},
     {"type": "greenhouse", "token": "datadog", "label": "Datadog"},
-    {"type": "greenhouse", "token": "snowflake", "label": "Snowflake"},
+   # {"type": "greenhouse", "token": "snowflake", "label": "Snowflake"},
     {"type": "greenhouse", "token": "coinbase", "label": "Coinbase"},
+    {"type": "greenhouse", "token": "contentful", "label": "Contentful"},
+    {"type": "greenhouse", "token": "contentstack", "label": "Contentstack"},
+    {"type": "greenhouse", "token": "optimizely", "label": "Optimizely"},
+    {"type": "greenhouse", "token": "adobe", "label": "Adobe"},
+    {"type": "greenhouse", "token": "sprinklr", "label": "Sprinklr"},
+    {"type": "greenhouse", "token": "mailchimp", "label": "Mailchimp"},
+    {"type": "greenhouse", "token": "autodesk", "label": "Autodesk"},
+    {"type": "greenhouse", "token": "intuit", "label": "Intuit"},
+    {"type": "greenhouse", "token": "servicenow", "label": "ServiceNow"},
+    {"type": "greenhouse", "token": "atlassian", "label": "Atlassian"},
+    {"type": "greenhouse", "token": "publicissapient", "label": "Publicis Sapient"},
+    {"type": "greenhouse", "token": "accenture", "label": "Accenture"},
+    {"type": "greenhouse", "token": "slalom", "label": "Slalom"},
+    {"type": "greenhouse", "token": "thoughtworks", "label": "Thoughtworks"},
 ]
 
 
