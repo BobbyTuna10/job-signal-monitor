@@ -885,27 +885,29 @@ def main() -> None:
         errors=errors,
     )
 
-    if not DEBUG:
+        if not DEBUG:
         send_email(subject, html_body)
     else:
         print("\n=== EMAIL PREVIEW ===")
         print(subject)
         print(html_body[:2000])
 
-if not DEBUG:
-    for job in strong_matches:
-        jobs_seen[job.fingerprint] = {
-            "source_type": job.source_type,
-            "source_company": job.source_company,
-            "job_id": job.job_id,
-            "title": job.title,
-            "location": job.location,
-            "posted_at": job.posted_at,
-            "score": job.score,
-            "match_reasons": job.match_reasons,
-            "first_seen_at": job.first_seen_at,
-            "alerted_at": run_started,
-        }
+    # ✅ MUST be inside main (same indent as block above)
+    if not DEBUG:
+        for job in strong_matches:
+            jobs_seen[job.fingerprint] = {
+                "source_type": job.source_type,
+                "source_company": job.source_company,
+                "job_id": job.job_id,
+                "title": job.title,
+                "location": job.location,
+                "posted_at": job.posted_at,
+                "score": job.score,
+                "match_reasons": job.match_reasons,
+                "first_seen_at": job.first_seen_at,
+                "alerted_at": run_started,
+            }
+
     state["last_run_at"] = run_started
     save_state(state)
 
