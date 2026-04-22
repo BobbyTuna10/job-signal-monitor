@@ -142,6 +142,14 @@ EXCLUDE_TERMS = [
     "specialist",
     "program",
     "programs",
+    "account management",
+    "corporate development",
+    "transportation",
+    "logistics",
+    "smb",
+    "local markets",
+    "new verticals",
+    "commerce platform",
 ]
 
 ATLANTA_TERMS = [
@@ -399,7 +407,33 @@ def title_has_target_signal(title: str) -> bool:
     ]
     return any(term in title_text for term in target_terms)
 
+def title_penalty_score(title: str) -> tuple[int, list[str]]:
+    title_text = normalize_text(title)
+    penalty = 0
+    reasons: list[str] = []
 
+    has_strong_target = any(term in title_text for term in [
+        "platform",
+        "product management",
+        "digital experience",
+        "web experience",
+        "experience platform",
+        "cms",
+        "aem",
+        "sitecore",
+        "martech",
+        "web",
+    ])
+
+    if not has_strong_target:
+        if "operations" in title_text:
+            penalty -= 1
+            reasons.append("Operations penalty")
+        if "strategy" in title_text:
+            penalty -= 1
+            reasons.append("Strategy penalty")
+
+    return penalty, reasons
 def location_allowed(location: str) -> bool:
     loc = normalize_text(location)
     if not loc:
@@ -634,6 +668,10 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     title_points, title_reasons = title_signal_score(job.title)
     score += title_points
     for reason in title_reasons:
+        add_reason_once(reasons, reason)
+        penalty_points, penalty_reasons = title_penalty_score(job.title)
+    score += penalty_points
+    for reason in penalty_reasons:
         add_reason_once(reasons, reason)
     return score, reasons
 
