@@ -885,7 +885,7 @@ def main() -> None:
         errors=errors,
     )
 
-        if not DEBUG:
+    if not DEBUG:
         send_email(subject, html_body)
     else:
         print("\n=== EMAIL PREVIEW ===")
