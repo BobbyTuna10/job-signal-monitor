@@ -20,6 +20,7 @@ UTC = timezone.utc
 DISPLAY_CAP = 15
 MIN_SCORE = 3
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
+IGNORE_SEEN = os.getenv("IGNORE_SEEN", "false").lower() == "true"
 
 
 # -----------------------------
@@ -869,10 +870,10 @@ def main() -> None:
                         print("Excluded: business-function title")
                     continue
 
-                if job.fingerprint in jobs_seen:
+                if job.fingerprint in jobs_seen and not IGNORE_SEEN:
                     if DEBUG:
-                        print("Already seen, but allowing for test run")
-                    # continue
+                        print("Excluded: already seen")
+                    continue
 
                 score, reasons = score_job(job)
 
