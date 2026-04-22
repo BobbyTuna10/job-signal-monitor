@@ -139,8 +139,8 @@
       "title": "Product Operations Lead"
     },
     "greenhouse:Chime:8219791002": {
-      "alerted_at": "2026-04-22T19:57:13.438323+00:00",
-      "first_seen_at": "2026-04-22T19:57:13.438323+00:00",
+      "alerted_at": "2026-04-22T23:19:12.172038+00:00",
+      "first_seen_at": "2026-04-22T23:19:12.172038+00:00",
       "job_id": "8219791002",
       "location": "San Francisco, CA, USA",
       "match_reasons": [
@@ -168,8 +168,8 @@
       "title": "Product Manager, Support Agent"
     },
     "greenhouse:Chime:8478204002": {
-      "alerted_at": "2026-04-22T19:57:13.438323+00:00",
-      "first_seen_at": "2026-04-22T19:57:13.438323+00:00",
+      "alerted_at": "2026-04-22T23:19:12.172038+00:00",
+      "first_seen_at": "2026-04-22T23:19:12.172038+00:00",
       "job_id": "8478204002",
       "location": "San Francisco, CA, USA",
       "match_reasons": [
@@ -178,7 +178,7 @@
         "Digital Experience"
       ],
       "posted_at": "2026-04-20T15:40:08-04:00",
-      "score": 4,
+      "score": 3,
       "source_company": "Chime",
       "source_type": "greenhouse",
       "title": "Product Manager, AI & App Experience"
@@ -390,8 +390,8 @@
       "title": "Strategy Director (Experience Strategy) Healthcare"
     },
     "greenhouse:Webflow:7721580": {
-      "alerted_at": "2026-04-22T19:57:13.438323+00:00",
-      "first_seen_at": "2026-04-22T19:57:13.438323+00:00",
+      "alerted_at": "2026-04-22T23:19:12.172038+00:00",
+      "first_seen_at": "2026-04-22T23:19:12.172038+00:00",
       "job_id": "7721580",
       "location": "CA Remote (BC & ON only); U.S. Remote",
       "match_reasons": [
@@ -402,7 +402,7 @@
         "Product"
       ],
       "posted_at": "2026-04-21T14:56:18-04:00",
-      "score": 13,
+      "score": 12,
       "source_company": "Webflow",
       "source_type": "greenhouse",
       "title": "Product Manager, Subscription & Payments"
@@ -426,5 +426,5 @@
       "title": "Senior Manager, People Technology"
     }
   },
-  "last_run_at": "2026-04-22T19:57:13.438323+00:00"
+  "last_run_at": "2026-04-22T23:19:12.172038+00:00"
 }
