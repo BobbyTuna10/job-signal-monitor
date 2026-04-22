@@ -671,10 +671,10 @@ def score_job(job: Job) -> tuple[int, list[str]]:
         add_reason_once(reasons, reason)
 
     # Apply penalty for operations/strategy-heavy titles
-    penalty_points, penalty_reasons = title_penalty_score(job.title)
-    score += penalty_points
-    for reason in penalty_reasons:
-        add_reason_once(reasons, reason)
+    #penalty_points, penalty_reasons = title_penalty_score(job.title)
+    #score += penalty_points
+    #for reason in penalty_reasons:
+        #add_reason_once(reasons, reason)
 
     return score, reasons
 
