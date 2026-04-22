@@ -38,33 +38,23 @@ SOURCES = [
     {"type": "greenhouse", "token": "discord", "label": "Discord"},
     {"type": "greenhouse", "token": "robinhood", "label": "Robinhood"},
     {"type": "greenhouse", "token": "elastic", "label": "Elastic"},
-    {"type": "greenhouse", "token": "doordash", "label": "DoorDash"},
 
     # Martech / experience / product (strong fit)
     {"type": "greenhouse", "token": "contentful", "label": "Contentful"},
     {"type": "greenhouse", "token": "webflow", "label": "Webflow"},
     {"type": "greenhouse", "token": "braze", "label": "Braze"},
-    {"type": "greenhouse", "token": "segmentio", "label": "Segment"},
     {"type": "greenhouse", "token": "amplitude", "label": "Amplitude"},
 
     # Modern product/platform companies
     {"type": "greenhouse", "token": "figma", "label": "Figma"},
-    {"type": "greenhouse", "token": "notion", "label": "Notion"},
     {"type": "greenhouse", "token": "vercel", "label": "Vercel"},
-    {"type": "greenhouse", "token": "supabase", "label": "Supabase"},
-    {"type": "greenhouse", "token": "posthog", "label": "PostHog"},
 
     # Fintech / platform heavy (good signal)
     {"type": "greenhouse", "token": "brex", "label": "Brex"},
-    {"type": "greenhouse", "token": "ramp", "label": "Ramp"},
-    {"type": "greenhouse", "token": "plaid", "label": "Plaid"},
     {"type": "greenhouse", "token": "chime", "label": "Chime"},
-    {"type": "greenhouse", "token": "rippling", "label": "Rippling"},
 
     # Digital / transformation firms
-    {"type": "greenhouse", "token": "applydigital", "label": "Apply Digital"},
     {"type": "greenhouse", "token": "valtech", "label": "Valtech"},
-    {"type": "greenhouse", "token": "deptagency", "label": "DEPT"},
 ]
 
 # --- TESTING (add here first before promoting to ACTIVE) ---
@@ -76,6 +66,10 @@ SOURCES = [
 # {"type": "greenhouse", "token": "newrelic", "label": "New Relic"},
 # {"type": "greenhouse", "token": "sentry", "label": "Sentry"},
 # {"type": "greenhouse", "token": "zapier", "label": "Zapier"},
+# --- TESTING (likely fixable tokens) ---
+# {"type": "greenhouse", "token": "doordash", "label": "DoorDash"},
+# {"type": "greenhouse", "token": "segmentio", "label": "Segment"},
+# {"type": "greenhouse", "token": "notion", "label": "Notion"},
 
 # --- FAILED / NOT GREENHOUSE (keep for reference / future ATS support) ---
 # These returned 404 and likely use Workday / iCIMS / custom ATS
@@ -91,6 +85,13 @@ SOURCES = [
 # {"type": "greenhouse", "token": "publicissapient", "label": "Publicis Sapient"},
 # {"type": "greenhouse", "token": "accenture", "label": "Accenture"},
 # {"type": "greenhouse", "token": "slalom", "label": "Slalom"},
+# {"type": "greenhouse", "token": "supabase", "label": "Supabase"},
+# {"type": "greenhouse", "token": "posthog", "label": "PostHog"},
+# {"type": "greenhouse", "token": "ramp", "label": "Ramp"},
+# {"type": "greenhouse", "token": "plaid", "label": "Plaid"},
+# {"type": "greenhouse", "token": "rippling", "label": "Rippling"},
+# {"type": "greenhouse", "token": "applydigital", "label": "Apply Digital"},
+# {"type": "greenhouse", "token": "deptagency", "label": "DEPT"},
 
 # -----------------------------
 # Weighted matching rules
