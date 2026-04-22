@@ -877,18 +877,19 @@ def main() -> None:
         print(subject)
         print(html_body[:2000])
 
-    for job in strong_matches:
-        jobs_seen[job.fingerprint] = {
-            "source_type": job.source_type,
-            "source_company": job.source_company,
-            "job_id": job.job_id,
-            "title": job.title,
-            "location": job.location,
-            "posted_at": job.posted_at,
-            "score": job.score,
-            "match_reasons": job.match_reasons,
-            "first_seen_at": job.first_seen_at,
-            "alerted_at": run_started,
+    if not DEBUG:
+        for job in strong_matches:
+            jobs_seen[job.fingerprint] = {
+                "source_type": job.source_type,
+                "source_company": job.source_company,
+                "job_id": job.job_id,
+                "title": job.title,
+                "location": job.location,
+                "posted_at": job.posted_at,
+                "score": job.score,
+                "match_reasons": job.match_reasons,
+                "first_seen_at": job.first_seen_at,
+                "alerted_at": run_started,
         }
 
     state["last_run_at"] = run_started
