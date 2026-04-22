@@ -713,10 +713,10 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     for reason in title_reasons:
         add_reason_once(reasons, reason)
 
-      if not has_domain_signal and not any(term in haystack for term in strong_stack_terms):
-          return 0, []
+    if not has_domain_signal and not any(term in haystack for term in strong_stack_terms):
+        return 0, []
           
-      return score, reasons
+    return score, reasons
 
 def is_recent_enough(posted_at: Optional[str]) -> bool:
     if not posted_at:
