@@ -640,17 +640,17 @@ def score_job(job: Job) -> tuple[int, list[str]]:
             else:
                 add_reason_once(reasons, "DXP")
 
-       for term, points in HIGH_WEIGHT_SENIORITY.items():
-            if term in haystack and has_domain_signal:
-                score += points
-                if term == "director":
-                    add_reason_once(reasons, "Director")
-                elif term == "senior manager":
-                    add_reason_once(reasons, "Senior Manager")
-                elif term == "head":
-                    add_reason_once(reasons, "Head")
-                elif term == "lead":
-                    add_reason_once(reasons, "Lead")
+    for term, points in HIGH_WEIGHT_SENIORITY.items():
+        if term in haystack and has_domain_signal:
+            score += points
+            if term == "director":
+                add_reason_once(reasons, "Director")
+            elif term == "senior manager":
+                add_reason_once(reasons, "Senior Manager")
+            elif term == "head":
+                add_reason_once(reasons, "Head")
+            elif term == "lead":
+                add_reason_once(reasons, "Lead")
 
     for term, points in MEDIUM_WEIGHT_PRODUCT.items():
         if term in haystack:
