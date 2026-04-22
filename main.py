@@ -47,6 +47,14 @@ SOURCES: list[dict[str, str]] = [
     {"type": "greenhouse", "token": "dept", "label": "DEPT"},
     {"type": "greenhouse", "token": "neweratech", "label": "New Era Technology"},
     {"type": "greenhouse", "token": "credera", "label": "Credera"},
+    {"type": "greenhouse", "token": "shopify", "label": "Shopify"},
+    {"type": "greenhouse", "token": "squareup", "label": "Block / Square"},
+    {"type": "greenhouse", "token": "twilio", "label": "Twilio"},
+    {"type": "greenhouse", "token": "segment", "label": "Segment"},
+    {"type": "greenhouse", "token": "amplitude", "label": "Amplitude"},
+    {"type": "greenhouse", "token": "datadog", "label": "Datadog"},
+    {"type": "greenhouse", "token": "snowflake", "label": "Snowflake"},
+    {"type": "greenhouse", "token": "coinbase", "label": "Coinbase"},
 ]
 
 
