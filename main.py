@@ -706,15 +706,15 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     if contains_any(location_text, ATLANTA_BOOST_TERMS):
         score += 1
         add_reason_once(reasons, "Atlanta")
-    if any(term in location_text for term in [
-        "canada",
-        "bc",
-        "ontario",
-        "toronto",
+   if any(term in location_text for term in [
+       "canada",
+       "bc",
+       "ontario",
+       "toronto",
 ]):
-        if DEBUG:
-            print("Excluded: non-US geo")
-        continue
+    if DEBUG:
+        print("Excluded: non-US geo")
+    return 0, []
     # Add title-based scoring
     title_points, title_reasons = title_signal_score(job.title)
     score += title_points
