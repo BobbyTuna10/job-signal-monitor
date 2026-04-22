@@ -1,4 +1,250 @@
 {
-  "last_run_at": null,
-  "jobs_seen": {}
+  "jobs_seen": {
+    "greenhouse:Affirm:7546361003": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7546361003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Director",
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 6,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Operations"
+    },
+    "greenhouse:Affirm:7583340003": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7583340003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 3,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Operations Enablement Manager (Disputes Management)"
+    },
+    "greenhouse:Affirm:7601069003": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7601069003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Director",
+        "Product",
+        "Product Management"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 6,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Director, Product Management"
+    },
+    "greenhouse:Affirm:7685758003": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7685758003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-08T17:10:17-04:00",
+      "score": 3,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Operations Enablement Lead"
+    },
+    "greenhouse:Airbnb:7451574": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7451574",
+      "location": "United States ",
+      "match_reasons": [
+        "Platform",
+        "Digital Experience"
+      ],
+      "posted_at": "2026-01-29T15:39:58-05:00",
+      "score": 7,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Staff Platform Manager, Community Experience Platforms"
+    },
+    "greenhouse:Airbnb:7652631": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7652631",
+      "location": "United States",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-03-27T13:02:30-04:00",
+      "score": 3,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Data Protection Operations Lead"
+    },
+    "greenhouse:Airbnb:7724155": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7724155",
+      "location": "United States ",
+      "match_reasons": [
+        "Lead",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-03-17T17:33:54-04:00",
+      "score": 4,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Operations Data & Technology Strategy Lead"
+    },
+    "greenhouse:Airbnb:7768834": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7768834",
+      "location": "United States ",
+      "match_reasons": [
+        "Senior Manager"
+      ],
+      "posted_at": "2026-03-31T12:21:29-04:00",
+      "score": 3,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Supply Tech"
+    },
+    "greenhouse:Airbnb:7788387": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7788387",
+      "location": "United States ",
+      "match_reasons": [
+        "Lead",
+        "Product",
+        "Operations"
+      ],
+      "posted_at": "2026-04-08T11:49:19-04:00",
+      "score": 4,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Product Operations Lead"
+    },
+    "greenhouse:DoorDash:7368928": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7368928",
+      "location": "San Francisco, CA; New York, NY; Los Angeles, CA; Seattle, WA; Washington D.C.; Chicago, IL; United States - Remote",
+      "match_reasons": [
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 3,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Senior Associate, Customer Experience New Launches"
+    },
+    "greenhouse:DoorDash:7684688": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7684688",
+      "location": "San Francisco, CA; New York, NY; Chicago, IL; Seattle, WA; Phoenix, AZ; United States - Remote",
+      "match_reasons": [
+        "Digital Experience",
+        "Strategy"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 4,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate, Customer Experience- Data & Strategy"
+    },
+    "greenhouse:DoorDash:7773960": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7773960",
+      "location": "United States - Remote",
+      "match_reasons": [
+        "Digital Experience",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 5,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate Manager, Strategy & Operations \u2013 Customer Experience "
+    },
+    "greenhouse:Dropbox:7729243": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7729243",
+      "location": "Remote - US: Select locations",
+      "match_reasons": [
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 3,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Senior Product Manager, Growth"
+    },
+    "greenhouse:Elastic:7674976": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7674976",
+      "location": "United States",
+      "match_reasons": [
+        "Director"
+      ],
+      "posted_at": "2026-04-06T11:08:02-04:00",
+      "score": 3,
+      "source_company": "Elastic",
+      "source_type": "greenhouse",
+      "title": "Sr. Director, IT - AI Innovation and Services"
+    },
+    "greenhouse:Stripe:7657938": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "7657938",
+      "location": "NYC, Seattle, San Francisco, Chicago, Atlanta, Remote",
+      "match_reasons": [
+        "Product",
+        "Atlanta",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-21T11:42:55-04:00",
+      "score": 6,
+      "source_company": "Stripe",
+      "source_type": "greenhouse",
+      "title": "Product Strategy & Operations, Link"
+    },
+    "greenhouse:Valtech:4789849101": {
+      "alerted_at": "2026-04-22T15:33:25.769509+00:00",
+      "first_seen_at": "2026-04-22T15:33:25.769509+00:00",
+      "job_id": "4789849101",
+      "location": "United States - Remote",
+      "match_reasons": [
+        "Director",
+        "Digital Experience",
+        "Strategy"
+      ],
+      "posted_at": "2026-03-31T12:13:04-04:00",
+      "score": 5,
+      "source_company": "Valtech",
+      "source_type": "greenhouse",
+      "title": "Strategy Director (Experience Strategy) Healthcare"
+    }
+  },
+  "last_run_at": "2026-04-22T15:33:25.769509+00:00"
 }
