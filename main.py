@@ -287,7 +287,22 @@ def contains_any(text: str, terms: list[str]) -> bool:
 def add_reason_once(reasons: list[str], label: str) -> None:
     if label not in reasons:
         reasons.append(label)
-
+        
+def has_required_domain_signal(title: str) -> bool:
+    title_text = normalize_text(title)
+    domain_terms = [
+        "platform",
+        "product",
+        "digital",
+        "experience",
+        "web",
+        "content",
+        "cms",
+        "aem",
+        "sitecore",
+        "martech",
+    ]
+    return any(term in title_text for term in domain_terms)
 
 def escape_html(value: str) -> str:
     return (
@@ -504,6 +519,7 @@ def title_excluded_by_business_function(title: str) -> bool:
         "sales",
     ]
     return any(term in title_text for term in blocked_terms)
+    
 def exclusion_hit(job: Job) -> Optional[str]:
     haystack = normalize_text(
         " ".join(
@@ -864,10 +880,14 @@ def main() -> None:
                     if DEBUG:
                         print(f"Excluded: term '{excluded_term}'")
                     continue
-
                 if title_excluded_by_business_function(job.title):
                     if DEBUG:
                         print("Excluded: business-function title")
+                    continue
+
+                if not has_required_domain_signal(job.title):
+                    if DEBUG:
+                        print("Excluded: missing domain signal")
                     continue
 
                 if job.fingerprint in jobs_seen and not IGNORE_SEEN:
