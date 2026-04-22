@@ -48,8 +48,8 @@
       "title": "Senior Director, Product Management"
     },
     "greenhouse:Affirm:7685758003": {
-      "alerted_at": "2026-04-22T17:34:03.589962+00:00",
-      "first_seen_at": "2026-04-22T17:34:03.589962+00:00",
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
       "job_id": "7685758003",
       "location": "Remote US",
       "match_reasons": [
@@ -123,8 +123,8 @@
       "title": "Senior Manager, Supply Tech"
     },
     "greenhouse:Airbnb:7788387": {
-      "alerted_at": "2026-04-22T17:34:03.589962+00:00",
-      "first_seen_at": "2026-04-22T17:34:03.589962+00:00",
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
       "job_id": "7788387",
       "location": "United States ",
       "match_reasons": [
@@ -137,6 +137,85 @@
       "source_company": "Airbnb",
       "source_type": "greenhouse",
       "title": "Product Operations Lead"
+    },
+    "greenhouse:Chime:8219791002": {
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
+      "job_id": "8219791002",
+      "location": "San Francisco, CA, USA",
+      "match_reasons": [
+        "Product"
+      ],
+      "posted_at": "2026-04-20T15:40:08-04:00",
+      "score": 3,
+      "source_company": "Chime",
+      "source_type": "greenhouse",
+      "title": "Product Manager, MyPay"
+    },
+    "greenhouse:Chime:8416978002": {
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
+      "job_id": "8416978002",
+      "location": "San Francisco, CA, USA",
+      "match_reasons": [
+        "Lead",
+        "Product"
+      ],
+      "posted_at": "2026-04-20T15:40:08-04:00",
+      "score": 3,
+      "source_company": "Chime",
+      "source_type": "greenhouse",
+      "title": "Product Manager, Support Agent"
+    },
+    "greenhouse:Chime:8478204002": {
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
+      "job_id": "8478204002",
+      "location": "San Francisco, CA, USA",
+      "match_reasons": [
+        "Lead",
+        "Product",
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-20T15:40:08-04:00",
+      "score": 4,
+      "source_company": "Chime",
+      "source_type": "greenhouse",
+      "title": "Product Manager, AI & App Experience"
+    },
+    "greenhouse:Chime:8484052002": {
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
+      "job_id": "8484052002",
+      "location": "Remote, USA",
+      "match_reasons": [
+        "Lead",
+        "Digital Experience",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-20T15:40:08-04:00",
+      "score": 6,
+      "source_company": "Chime",
+      "source_type": "greenhouse",
+      "title": "Sr. Manager, Partner Strategy & Operations"
+    },
+    "greenhouse:Chime:8499435002": {
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
+      "job_id": "8499435002",
+      "location": "San Francisco, CA, USA",
+      "match_reasons": [
+        "Director",
+        "Lead",
+        "Product",
+        "Product Management"
+      ],
+      "posted_at": "2026-04-20T15:40:08-04:00",
+      "score": 8,
+      "source_company": "Chime",
+      "source_type": "greenhouse",
+      "title": "Director, Product Management - MyPay"
     },
     "greenhouse:Coinbase:7616000": {
       "alerted_at": "2026-04-22T17:34:03.589962+00:00",
@@ -249,8 +328,8 @@
       "title": "Associate Manager, Strategy & Operations \u2013 Customer Experience "
     },
     "greenhouse:Dropbox:7729243": {
-      "alerted_at": "2026-04-22T17:34:03.589962+00:00",
-      "first_seen_at": "2026-04-22T17:34:03.589962+00:00",
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
       "job_id": "7729243",
       "location": "Remote - US: Select locations",
       "match_reasons": [
@@ -278,8 +357,8 @@
       "title": "Sr. Director, IT - AI Innovation and Services"
     },
     "greenhouse:Stripe:7657938": {
-      "alerted_at": "2026-04-22T17:34:03.589962+00:00",
-      "first_seen_at": "2026-04-22T17:34:03.589962+00:00",
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
       "job_id": "7657938",
       "location": "NYC, Seattle, San Francisco, Chicago, Atlanta, Remote",
       "match_reasons": [
@@ -309,7 +388,43 @@
       "source_company": "Valtech",
       "source_type": "greenhouse",
       "title": "Strategy Director (Experience Strategy) Healthcare"
+    },
+    "greenhouse:Webflow:7721580": {
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
+      "job_id": "7721580",
+      "location": "CA Remote (BC & ON only); U.S. Remote",
+      "match_reasons": [
+        "DXP",
+        "Lead",
+        "Platform",
+        "Digital Experience",
+        "Product"
+      ],
+      "posted_at": "2026-04-21T14:56:18-04:00",
+      "score": 13,
+      "source_company": "Webflow",
+      "source_type": "greenhouse",
+      "title": "Product Manager, Subscription & Payments"
+    },
+    "greenhouse:Webflow:7813092": {
+      "alerted_at": "2026-04-22T17:38:52.024404+00:00",
+      "first_seen_at": "2026-04-22T17:38:52.024404+00:00",
+      "job_id": "7813092",
+      "location": "U.S. Remote",
+      "match_reasons": [
+        "DXP",
+        "Senior Manager",
+        "Lead",
+        "Platform",
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-13T19:28:31-04:00",
+      "score": 15,
+      "source_company": "Webflow",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, People Technology"
     }
   },
-  "last_run_at": "2026-04-22T17:34:03.589962+00:00"
+  "last_run_at": "2026-04-22T17:38:52.024404+00:00"
 }
