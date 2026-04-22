@@ -12,7 +12,7 @@ from typing import Any, Optional
 
 import requests
 
-
+print("JOB SIGNAL MONITOR STARTED")
 STATE_PATH = Path("state/job_state.json")
 USER_AGENT = "job-signal-monitor/1.0"
 TIMEOUT = 20
