@@ -151,6 +151,11 @@ EXCLUDE_TERMS = [
     "local markets",
     "new verticals",
     "commerce platform",
+    "talent management",
+    "tax",
+    "communications",
+    "fraud",
+    "company operations",
 ]
 
 ATLANTA_TERMS = [
@@ -287,22 +292,6 @@ def contains_any(text: str, terms: list[str]) -> bool:
 def add_reason_once(reasons: list[str], label: str) -> None:
     if label not in reasons:
         reasons.append(label)
-        
-def has_required_domain_signal(title: str) -> bool:
-    title_text = normalize_text(title)
-    domain_terms = [
-        "platform",
-        "product",
-        "digital",
-        "experience",
-        "web",
-        "content",
-        "cms",
-        "aem",
-        "sitecore",
-        "martech",
-    ]
-    return any(term in title_text for term in domain_terms)
 
 def escape_html(value: str) -> str:
     return (
@@ -404,24 +393,6 @@ def fetch_jobs_for_source(source: dict[str, str]) -> list[Job]:
 # -----------------------------
 # Filtering and scoring
 # -----------------------------
-def title_has_target_signal(title: str) -> bool:
-    title_text = normalize_text(title)
-    target_terms = [
-        "product",
-        "platform",
-        "digital",
-        "experience",
-        "content",
-        "cms",
-        "aem",
-        "sitecore",
-        "martech",
-        "web",
-        "strategy",
-        "operations",
-        "transformation",
-    ]
-    return any(term in title_text for term in target_terms)
 
 def title_penalty_score(title: str) -> tuple[int, list[str]]:
     title_text = normalize_text(title)
@@ -570,37 +541,6 @@ def title_signal_score(title: str) -> tuple[int, list[str]]:
                 reasons.append(label)
 
     return points, reasons
-
-def title_must_have_relevant_signal(title: str) -> bool:
-    title_text = normalize_text(title)
-
-    strong_terms = [
-        "product management",
-        "digital experience",
-        "web experience",
-        "experience platform",
-        "digital platform",
-        "content platform",
-        "content systems",
-        "cms",
-        "aem",
-        "sitecore",
-        "martech",
-    ]
-
-    medium_terms = [
-        "product",
-        "platform",
-        "digital",
-        "content",
-        "web",
-        "experience",
-    ]
-
-    strong_hit = any(term in title_text for term in strong_terms)
-    medium_hits = sum(1 for term in medium_terms if term in title_text)
-    
-    return strong_hit or medium_hits >= 1
     
 def score_job(job: Job) -> tuple[int, list[str]]:
     haystack = normalize_text(
@@ -703,7 +643,13 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     #score += penalty_points
     #for reason in penalty_reasons:
         #add_reason_once(reasons, reason)
-
+    #ADD THIS BLOCK HERE
+    if not has_domain_signal and not any(
+        term in haystack for term in [
+            "aem", "sitecore", "cms", "dxp", "digital experience"
+        ]
+    ):
+    return 0, []
     return score, reasons
 
 
@@ -946,21 +892,20 @@ def main() -> None:
         print(subject)
         print(html_body[:2000])
 
-    if not DEBUG:
-        for job in strong_matches:
-            jobs_seen[job.fingerprint] = {
-                "source_type": job.source_type,
-                "source_company": job.source_company,
-                "job_id": job.job_id,
-                "title": job.title,
-                "location": job.location,
-                "posted_at": job.posted_at,
-                "score": job.score,
-                "match_reasons": job.match_reasons,
-                "first_seen_at": job.first_seen_at,
-                "alerted_at": run_started,
+if not DEBUG:
+    for job in strong_matches:
+        jobs_seen[job.fingerprint] = {
+            "source_type": job.source_type,
+            "source_company": job.source_company,
+            "job_id": job.job_id,
+            "title": job.title,
+            "location": job.location,
+            "posted_at": job.posted_at,
+            "score": job.score,
+            "match_reasons": job.match_reasons,
+            "first_seen_at": job.first_seen_at,
+            "alerted_at": run_started,
         }
-
     state["last_run_at"] = run_started
     save_state(state)
 
