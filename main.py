@@ -703,18 +703,19 @@ def score_job(job: Job) -> tuple[int, list[str]]:
                 add_reason_once(reasons, "Strategy/Ops")
 
     location_text = normalize_text(job.location)
-    if contains_any(location_text, ATLANTA_BOOST_TERMS):
-        score += 1
-        add_reason_once(reasons, "Atlanta")
+
     if any(term in location_text for term in [
-        "canada",
-        "bc",
-        "ontario",
-        "toronto",
+        "canada only",
+        "canada (",
+        " toronto",
+        " vancouver",
+        " bc ",
+        " ontario",
 ]):
-        if DEBUG:
-            print("Excluded: non-US geo")
-        return 0, []
+        if "united states" not in location_text and "us" not in location_text:
+            if DEBUG:
+                print("Excluded: non-US geo")
+            return 0, []
     # Add title-based scoring
     title_points, title_reasons = title_signal_score(job.title)
     score += title_points
@@ -722,7 +723,7 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     for reason in title_reasons:
         add_reason_once(reasons, reason)
 
-    if not has_domain_signal and not any(term in haystack for term in strong_stack_terms):
+    if not has_domain_signal:
         return 0, []
           
     return score, reasons
