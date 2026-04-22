@@ -27,51 +27,70 @@ IGNORE_SEEN = os.getenv("IGNORE_SEEN", "false").lower() == "true"
 # -----------------------------
 # Configure sources here
 # -----------------------------
-SOURCES: list[dict[str, str]] = [
-    {"type": "greenhouse", "token": "hubspot", "label": "HubSpot"},
-    {"type": "greenhouse", "token": "robinhood", "label": "Robinhood"},
+# --- ACTIVE (working / high confidence) ---
+SOURCES = [
+    # Core (already working for you)
     {"type": "greenhouse", "token": "airbnb", "label": "Airbnb"},
     {"type": "greenhouse", "token": "stripe", "label": "Stripe"},
-    {"type": "greenhouse", "token": "okta", "label": "Okta"},
-    {"type": "greenhouse", "token": "zscaler", "label": "Zscaler"},
-    {"type": "greenhouse", "token": "affirm", "label": "Affirm"},
-    {"type": "greenhouse", "token": "fivetran", "label": "Fivetran"},
-    {"type": "greenhouse", "token": "asana", "label": "Asana"},
-    {"type": "greenhouse", "token": "gusto", "label": "Gusto"},
-    {"type": "greenhouse", "token": "doordashusa", "label": "DoorDash"},
     {"type": "greenhouse", "token": "dropbox", "label": "Dropbox"},
+    {"type": "greenhouse", "token": "affirm", "label": "Affirm"},
     {"type": "greenhouse", "token": "reddit", "label": "Reddit"},
     {"type": "greenhouse", "token": "discord", "label": "Discord"},
-    {"type": "greenhouse", "token": "databricks", "label": "Databricks"},
+    {"type": "greenhouse", "token": "robinhood", "label": "Robinhood"},
     {"type": "greenhouse", "token": "elastic", "label": "Elastic"},
-    {"type": "greenhouse", "token": "valtech", "label": "Valtech"},
-    {"type": "greenhouse", "token": "dept", "label": "DEPT"},
-    {"type": "greenhouse", "token": "neweratech", "label": "New Era Technology"},
-    {"type": "greenhouse", "token": "credera", "label": "Credera"},
-    #{"type": "greenhouse", "token": "shopify", "label": "Shopify"},
-    #{"type": "greenhouse", "token": "squareup", "label": "Block / Square"},
-    {"type": "greenhouse", "token": "twilio", "label": "Twilio"},
-    #{"type": "greenhouse", "token": "segment", "label": "Segment"},
-    {"type": "greenhouse", "token": "amplitude", "label": "Amplitude"},
-    {"type": "greenhouse", "token": "datadog", "label": "Datadog"},
-   # {"type": "greenhouse", "token": "snowflake", "label": "Snowflake"},
-    {"type": "greenhouse", "token": "coinbase", "label": "Coinbase"},
+    {"type": "greenhouse", "token": "doordash", "label": "DoorDash"},
+
+    # Martech / experience / product (strong fit)
     {"type": "greenhouse", "token": "contentful", "label": "Contentful"},
-    {"type": "greenhouse", "token": "contentstack", "label": "Contentstack"},
-    {"type": "greenhouse", "token": "optimizely", "label": "Optimizely"},
-    {"type": "greenhouse", "token": "adobe", "label": "Adobe"},
-    {"type": "greenhouse", "token": "sprinklr", "label": "Sprinklr"},
-    {"type": "greenhouse", "token": "mailchimp", "label": "Mailchimp"},
-    {"type": "greenhouse", "token": "autodesk", "label": "Autodesk"},
-    {"type": "greenhouse", "token": "intuit", "label": "Intuit"},
-    {"type": "greenhouse", "token": "servicenow", "label": "ServiceNow"},
-    {"type": "greenhouse", "token": "atlassian", "label": "Atlassian"},
-    {"type": "greenhouse", "token": "publicissapient", "label": "Publicis Sapient"},
-    {"type": "greenhouse", "token": "accenture", "label": "Accenture"},
-    {"type": "greenhouse", "token": "slalom", "label": "Slalom"},
-    {"type": "greenhouse", "token": "thoughtworks", "label": "Thoughtworks"},
+    {"type": "greenhouse", "token": "webflow", "label": "Webflow"},
+    {"type": "greenhouse", "token": "braze", "label": "Braze"},
+    {"type": "greenhouse", "token": "segmentio", "label": "Segment"},
+    {"type": "greenhouse", "token": "amplitude", "label": "Amplitude"},
+
+    # Modern product/platform companies
+    {"type": "greenhouse", "token": "figma", "label": "Figma"},
+    {"type": "greenhouse", "token": "notion", "label": "Notion"},
+    {"type": "greenhouse", "token": "vercel", "label": "Vercel"},
+    {"type": "greenhouse", "token": "supabase", "label": "Supabase"},
+    {"type": "greenhouse", "token": "posthog", "label": "PostHog"},
+
+    # Fintech / platform heavy (good signal)
+    {"type": "greenhouse", "token": "brex", "label": "Brex"},
+    {"type": "greenhouse", "token": "ramp", "label": "Ramp"},
+    {"type": "greenhouse", "token": "plaid", "label": "Plaid"},
+    {"type": "greenhouse", "token": "chime", "label": "Chime"},
+    {"type": "greenhouse", "token": "rippling", "label": "Rippling"},
+
+    # Digital / transformation firms
+    {"type": "greenhouse", "token": "applydigital", "label": "Apply Digital"},
+    {"type": "greenhouse", "token": "valtech", "label": "Valtech"},
+    {"type": "greenhouse", "token": "deptagency", "label": "DEPT"},
 ]
 
+# --- TESTING (add here first before promoting to ACTIVE) ---
+# Move these up if they consistently return jobs
+
+# {"type": "greenhouse", "token": "linear", "label": "Linear"},
+# {"type": "greenhouse", "token": "heap", "label": "Heap"},
+# {"type": "greenhouse", "token": "ust", "label": "UST"},
+# {"type": "greenhouse", "token": "newrelic", "label": "New Relic"},
+# {"type": "greenhouse", "token": "sentry", "label": "Sentry"},
+# {"type": "greenhouse", "token": "zapier", "label": "Zapier"},
+
+# --- FAILED / NOT GREENHOUSE (keep for reference / future ATS support) ---
+# These returned 404 and likely use Workday / iCIMS / custom ATS
+
+# {"type": "greenhouse", "token": "optimizely", "label": "Optimizely"},
+# {"type": "greenhouse", "token": "adobe", "label": "Adobe"},
+# {"type": "greenhouse", "token": "sprinklr", "label": "Sprinklr"},
+# {"type": "greenhouse", "token": "mailchimp", "label": "Mailchimp"},
+# {"type": "greenhouse", "token": "autodesk", "label": "Autodesk"},
+# {"type": "greenhouse", "token": "intuit", "label": "Intuit"},
+# {"type": "greenhouse", "token": "servicenow", "label": "ServiceNow"},
+# {"type": "greenhouse", "token": "atlassian", "label": "Atlassian"},
+# {"type": "greenhouse", "token": "publicissapient", "label": "Publicis Sapient"},
+# {"type": "greenhouse", "token": "accenture", "label": "Accenture"},
+# {"type": "greenhouse", "token": "slalom", "label": "Slalom"},
 
 # -----------------------------
 # Weighted matching rules
