@@ -19,7 +19,7 @@ TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
 MIN_SCORE = 3
-MAX_JOB_AGE_DAYS = 15
+MAX_JOB_AGE_DAYS = 10
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 IGNORE_SEEN = os.getenv("IGNORE_SEEN", "false").lower() == "true"
 
@@ -708,7 +708,20 @@ def score_job(job: Job) -> tuple[int, list[str]]:
         return 0, []
     return score, reasons
 
+def is_recent_enough(posted_at: Optional[str]) -> bool:
+    if not posted_at:
+        return False  # 🔴 change: drop jobs with no date
 
+    dt = parse_datetime(posted_at)
+    if not dt:
+        return False
+
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=UTC)
+
+    age_days = (now_utc() - dt.astimezone(UTC)).days
+    return age_days <= MAX_JOB_AGE_DAYS
+    
 def rank_key(job: Job) -> tuple:
     posted_dt = parse_datetime(job.posted_at) or datetime(1970, 1, 1, tzinfo=UTC)
     title_text = normalize_text(job.title)
@@ -887,7 +900,10 @@ def main() -> None:
                     if DEBUG:
                         print("Excluded: location")
                     continue
-                    
+                if not is_recent_enough(job.posted_at):
+                    if DEBUG:
+                        print("Excluded: too old or missing date")
+                    continue    
                 if not is_recent_enough(job.posted_at):
                     if DEBUG:
                         print("Excluded: too old")
