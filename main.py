@@ -18,7 +18,7 @@ USER_AGENT = "job-signal-monitor/1.0"
 TIMEOUT = 20
 UTC = timezone.utc
 DISPLAY_CAP = 15
-MIN_SCORE = 2
+MIN_SCORE = 3
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 
 
@@ -138,6 +138,10 @@ EXCLUDE_TERMS = [
     "strategic account",
     "account executive",
     "sales",
+    "policy",
+    "specialist",
+    "program",
+    "programs",
 ]
 
 ATLANTA_TERMS = [
