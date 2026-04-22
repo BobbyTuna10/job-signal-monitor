@@ -123,6 +123,36 @@
       "source_type": "greenhouse",
       "title": "Senior Director, Product Management"
     },
+    "greenhouse:Affirm:7620527003": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7620527003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Product",
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 2,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Senior Product Manager, Card Experience"
+    },
+    "greenhouse:Affirm:7622734003": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7622734003",
+      "location": "Remote US",
+      "match_reasons": [
+        "Product",
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-02T11:02:43-04:00",
+      "score": 2,
+      "source_company": "Affirm",
+      "source_type": "greenhouse",
+      "title": "Product Manager II, Consumer Experiences"
+    },
     "greenhouse:Affirm:7685570003": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
       "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
@@ -183,6 +213,329 @@
       "source_type": "greenhouse",
       "title": "Product Marketing Manager"
     },
+    "greenhouse:Airbnb:7002763": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7002763",
+      "location": "United States ",
+      "match_reasons": [
+        "Senior Manager",
+        "Product"
+      ],
+      "posted_at": "2026-04-06T16:41:59-04:00",
+      "score": 4,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Product Specialist Program"
+    },
+    "greenhouse:Airbnb:7451574": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7451574",
+      "location": "United States ",
+      "match_reasons": [
+        "Platform",
+        "Digital Experience"
+      ],
+      "posted_at": "2026-01-29T15:39:58-05:00",
+      "score": 7,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Staff Platform Manager, Community Experience Platforms"
+    },
+    "greenhouse:Airbnb:7526372": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7526372",
+      "location": "United States",
+      "match_reasons": [
+        "Platform"
+      ],
+      "posted_at": "2026-04-16T17:27:45-04:00",
+      "score": 2,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Data Scientist, Platform - Identity/Algorithms"
+    },
+    "greenhouse:Airbnb:7594971": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7594971",
+      "location": "United States",
+      "match_reasons": [
+        "Platform"
+      ],
+      "posted_at": "2026-04-17T17:44:28-04:00",
+      "score": 2,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Data Scientist, Platform (Algorithms/Trust)"
+    },
+    "greenhouse:Airbnb:7652631": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7652631",
+      "location": "United States",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-03-27T13:02:30-04:00",
+      "score": 3,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Data Protection Operations Lead"
+    },
+    "greenhouse:Airbnb:7724030": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7724030",
+      "location": "United States ",
+      "match_reasons": [
+        "Platform"
+      ],
+      "posted_at": "2026-03-17T15:44:18-04:00",
+      "score": 2,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Platform Planning Manager"
+    },
+    "greenhouse:Airbnb:7724155": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7724155",
+      "location": "United States ",
+      "match_reasons": [
+        "Lead",
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-03-17T17:33:54-04:00",
+      "score": 4,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Operations Data & Technology Strategy Lead"
+    },
+    "greenhouse:Airbnb:7736028": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7736028",
+      "location": "Texas, United States ",
+      "match_reasons": [
+        "Senior Manager"
+      ],
+      "posted_at": "2026-03-25T14:35:47-04:00",
+      "score": 3,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Public Policy, Texas "
+    },
+    "greenhouse:Airbnb:7747440": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7747440",
+      "location": "United States ",
+      "match_reasons": [
+        "Platform"
+      ],
+      "posted_at": "2026-03-25T11:54:51-04:00",
+      "score": 2,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Staff Platform Manager, Business Host Payouts"
+    },
+    "greenhouse:Airbnb:7768834": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7768834",
+      "location": "United States ",
+      "match_reasons": [
+        "Senior Manager"
+      ],
+      "posted_at": "2026-03-31T12:21:29-04:00",
+      "score": 3,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Supply Tech"
+    },
+    "greenhouse:Airbnb:7782435": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7782435",
+      "location": "United States ",
+      "match_reasons": [
+        "Senior Manager",
+        "Product"
+      ],
+      "posted_at": "2026-04-20T17:11:07-04:00",
+      "score": 4,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Manager, Product & AI Policy"
+    },
+    "greenhouse:Airbnb:7788387": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7788387",
+      "location": "United States ",
+      "match_reasons": [
+        "Lead",
+        "Product",
+        "Operations"
+      ],
+      "posted_at": "2026-04-08T11:49:19-04:00",
+      "score": 4,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Product Operations Lead"
+    },
+    "greenhouse:Airbnb:7812160": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7812160",
+      "location": "United States",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-14T17:13:31-04:00",
+      "score": 3,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Programs & Business Operations Lead, Airbnb Services"
+    },
+    "greenhouse:Airbnb:7822781": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7822781",
+      "location": "United States ",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-17T13:49:43-04:00",
+      "score": 3,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Senior Programs & Business Operations Lead, Airbnb Services "
+    },
+    "greenhouse:Airbnb:7834481": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7834481",
+      "location": "United States ",
+      "match_reasons": [
+        "Lead",
+        "Operations"
+      ],
+      "posted_at": "2026-04-21T19:15:15-04:00",
+      "score": 3,
+      "source_company": "Airbnb",
+      "source_type": "greenhouse",
+      "title": "Programs and Business Operations Lead"
+    },
+    "greenhouse:Databricks:8071850002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8071850002",
+      "location": "United States",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-16T12:32:06-04:00",
+      "score": 2,
+      "source_company": "Databricks",
+      "source_type": "greenhouse",
+      "title": "AI Enablement Lead, Talent & Leadership Development"
+    },
+    "greenhouse:Databricks:8286103002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8286103002",
+      "location": "United States",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-09T16:51:18-04:00",
+      "score": 2,
+      "source_company": "Databricks",
+      "source_type": "greenhouse",
+      "title": "Senior Organizational Development Manager"
+    },
+    "greenhouse:Databricks:8356420002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8356420002",
+      "location": "San Francisco, California; United States",
+      "match_reasons": [
+        "Lead",
+        "Digital"
+      ],
+      "posted_at": "2026-04-09T16:51:23-04:00",
+      "score": 3,
+      "source_company": "Databricks",
+      "source_type": "greenhouse",
+      "title": "Go-To-Market (GTM) Digital Natives Program Leader"
+    },
+    "greenhouse:Databricks:8379150002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8379150002",
+      "location": "United States",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-09T16:51:24-04:00",
+      "score": 2,
+      "source_company": "Databricks",
+      "source_type": "greenhouse",
+      "title": "Industry Partner Lead, Healthcare & Life Sciences"
+    },
+    "greenhouse:Databricks:8395112002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8395112002",
+      "location": "Central - United States",
+      "match_reasons": [
+        "Lead",
+        "Strategy/Ops"
+      ],
+      "posted_at": "2026-04-09T16:51:25-04:00",
+      "score": 3,
+      "source_company": "Databricks",
+      "source_type": "greenhouse",
+      "title": "Sr. Engagement Manager, Manufacturing & High-Tech"
+    },
+    "greenhouse:Databricks:8438803002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8438803002",
+      "location": "Central - United States; Northeast - United States; Southeast - United States",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-16T16:27:15-04:00",
+      "score": 2,
+      "source_company": "Databricks",
+      "source_type": "greenhouse",
+      "title": "Lead Engagement Manager, Healthcare & Life Sciences"
+    },
+    "greenhouse:Databricks:8466586002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8466586002",
+      "location": "United States",
+      "match_reasons": [
+        "Lead",
+        "Strategy/Ops",
+        "Strategy"
+      ],
+      "posted_at": "2026-04-09T16:51:32-04:00",
+      "score": 4,
+      "source_company": "Databricks",
+      "source_type": "greenhouse",
+      "title": "Strategy & Execution Manager, GTM"
+    },
     "greenhouse:Discord:8190428002": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
       "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
@@ -226,6 +579,34 @@
       "source_company": "Discord",
       "source_type": "greenhouse",
       "title": "Senior Manager, Ads, Revenue & Commerce Policy"
+    },
+    "greenhouse:Discord:8419048002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8419048002",
+      "location": "Remote (U.S.)",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-17T18:09:36-04:00",
+      "score": 2,
+      "source_company": "Discord",
+      "source_type": "greenhouse",
+      "title": "Public Policy Lead, U.S. States"
+    },
+    "greenhouse:Discord:8422578002": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "8422578002",
+      "location": "New York, Remote (U.S.)",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-17T18:09:36-04:00",
+      "score": 2,
+      "source_company": "Discord",
+      "source_type": "greenhouse",
+      "title": "Global Agency Development Lead"
     },
     "greenhouse:Discord:8483227002": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
@@ -285,6 +666,51 @@
       "source_type": "greenhouse",
       "title": "Associate Strategic Account Development Executive - Platform"
     },
+    "greenhouse:DoorDash:7527459": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7527459",
+      "location": "New York, NY; Washington, DC; Boston, MA; Atlanta, GA",
+      "match_reasons": [
+        "Atlanta",
+        "Operations"
+      ],
+      "posted_at": "2026-04-20T10:42:21-04:00",
+      "score": 2,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Regional Operations Manager - DashMart"
+    },
+    "greenhouse:DoorDash:7651870": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7651870",
+      "location": "United States - Remote",
+      "match_reasons": [
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 2,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate, Quality Strategy & Operations"
+    },
+    "greenhouse:DoorDash:7654723": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7654723",
+      "location": "New York, NY; Denver, CO; Los Angeles, CA; Chicago, IL; United States - Remote",
+      "match_reasons": [
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 2,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Senior Associate, Innovation & New Bets - Strategy & Operations"
+    },
     "greenhouse:DoorDash:7656490": {
       "alerted_at": "2026-04-21T22:45:44.755299+00:00",
       "first_seen_at": "2026-04-21T22:45:44.755299+00:00",
@@ -330,6 +756,21 @@
       "source_company": "DoorDash",
       "source_type": "greenhouse",
       "title": "Associate, Strategy and Operations - Emerging Fraud"
+    },
+    "greenhouse:DoorDash:7714315": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7714315",
+      "location": "New York, NY; San Francisco, CA; Los Angeles, CA; Chicago, IL; Seattle, WA; Atlanta, GA; United States - Remote",
+      "match_reasons": [
+        "Atlanta",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 2,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Manager, eDiscovery Operations"
     },
     "greenhouse:DoorDash:7717824": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
@@ -405,6 +846,21 @@
       "source_company": "DoorDash",
       "source_type": "greenhouse",
       "title": "Senior Manager, Lifecycle Marketing, B2B"
+    },
+    "greenhouse:DoorDash:7752932": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7752932",
+      "location": "United States - Remote",
+      "match_reasons": [
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 2,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate Manager, QA Strategy & Operations"
     },
     "greenhouse:DoorDash:7767375": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
@@ -485,6 +941,36 @@
       "source_type": "greenhouse",
       "title": "Head of Transportation"
     },
+    "greenhouse:DoorDash:7800766": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7800766",
+      "location": "Minneapolis, MN; Austin, TX; Chicago, IL; Denver, CO; Philadelphia, PA; Miami, FL; Atlanta, GA; Tempe, AZ; United States - Remote",
+      "match_reasons": [
+        "Atlanta",
+        "Strategy"
+      ],
+      "posted_at": "2026-04-15T16:46:16-04:00",
+      "score": 2,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Sr. Analyst Workforce Strategy and Planning"
+    },
+    "greenhouse:DoorDash:7813015": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7813015",
+      "location": "New York, NY; San Francisco, CA; Chicago, IL; Seattle, WA; Los Angeles, CA; Austin, TX; Washington D.C.; United States - Remote",
+      "match_reasons": [
+        "Strategy",
+        "Operations"
+      ],
+      "posted_at": "2026-04-15T18:23:28-04:00",
+      "score": 2,
+      "source_company": "DoorDash",
+      "source_type": "greenhouse",
+      "title": "Associate Manager, Dasher & Logistics Strategy & Operations, Logistics Operations"
+    },
     "greenhouse:DoorDash:7818935": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
       "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
@@ -561,6 +1047,20 @@
       "source_company": "Dropbox",
       "source_type": "greenhouse",
       "title": "Staff Product Designer, New Initiatives"
+    },
+    "greenhouse:Dropbox:7520231": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7520231",
+      "location": "Remote - US: Select locations",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-10T12:45:13-04:00",
+      "score": 2,
+      "source_company": "Dropbox",
+      "source_type": "greenhouse",
+      "title": "Strategic Sourcing Lead - GTM"
     },
     "greenhouse:Dropbox:7571497": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
@@ -733,6 +1233,20 @@
       "source_type": "greenhouse",
       "title": "Senior Product Manager, Growth"
     },
+    "greenhouse:Elastic:7674976": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7674976",
+      "location": "United States",
+      "match_reasons": [
+        "Director"
+      ],
+      "posted_at": "2026-04-06T11:08:02-04:00",
+      "score": 3,
+      "source_company": "Elastic",
+      "source_type": "greenhouse",
+      "title": "Sr. Director, IT - AI Innovation and Services"
+    },
     "greenhouse:Gusto:7826266": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
       "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
@@ -761,6 +1275,20 @@
       "source_company": "Reddit",
       "source_type": "greenhouse",
       "title": "Director of Machine Learning, Safety & Mods"
+    },
+    "greenhouse:Reddit:7559059": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7559059",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-20T17:41:28-04:00",
+      "score": 2,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Senior Measurement Lead"
     },
     "greenhouse:Reddit:7572902": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
@@ -836,6 +1364,21 @@
       "source_type": "greenhouse",
       "title": "Product Communications Lead, Global"
     },
+    "greenhouse:Reddit:7686440": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7686440",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Digital Experience",
+        "Operations"
+      ],
+      "posted_at": "2026-03-19T11:36:32-04:00",
+      "score": 2,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Experience Partner, Real Estate Leasing and Operations "
+    },
     "greenhouse:Reddit:7746311": {
       "alerted_at": "2026-04-21T18:48:51.343780+00:00",
       "first_seen_at": "2026-04-21T18:48:51.343780+00:00",
@@ -851,6 +1394,20 @@
       "source_company": "Reddit",
       "source_type": "greenhouse",
       "title": "Senior Director of Product, Ads Platform"
+    },
+    "greenhouse:Reddit:7774908": {
+      "alerted_at": "2026-04-22T00:17:29.625337+00:00",
+      "first_seen_at": "2026-04-22T00:17:29.625337+00:00",
+      "job_id": "7774908",
+      "location": "Remote - United States",
+      "match_reasons": [
+        "Lead"
+      ],
+      "posted_at": "2026-04-02T08:42:56-04:00",
+      "score": 2,
+      "source_company": "Reddit",
+      "source_type": "greenhouse",
+      "title": "Lead, Compensation Partner"
     },
     "greenhouse:Stripe:5922987": {
       "alerted_at": "2026-04-21T13:55:59.112384+00:00",
@@ -949,5 +1506,5 @@
       "title": "Lead Experience Analytics & Optimisation Consultant"
     }
   },
-  "last_run_at": "2026-04-22T00:02:57.190634+00:00"
+  "last_run_at": "2026-04-22T00:17:29.625337+00:00"
 }
