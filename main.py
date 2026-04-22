@@ -619,16 +619,21 @@ def score_job(job: Job) -> tuple[int, list[str]]:
             ]
         )
     )
-has_domain_signal = any(term in haystack for term in [
-    "product",
-    "platform",
-    "digital experience",
-    "web",
-    "cms",
-    "aem",
-    "sitecore",
-    "martech",
-])
+
+    has_domain_signal = any(
+        term in haystack
+        for term in [
+            "product",
+            "platform",
+            "digital experience",
+            "web",
+            "cms",
+            "aem",
+            "sitecore",
+            "martech",
+        ]
+    )
+
     score = 0
     reasons: list[str] = []
 
