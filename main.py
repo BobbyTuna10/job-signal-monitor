@@ -233,7 +233,20 @@ class Job:
 # -----------------------------
 def now_utc() -> datetime:
     return datetime.now(UTC)
+    
+def is_recent_enough(posted_at: Optional[str], max_age_days: int = MAX_JOB_AGE_DAYS) -> bool:
+    if not posted_at:
+        return True  # keep jobs when posted date is missing
 
+    dt = parse_datetime(posted_at)
+    if not dt:
+        return True  # keep jobs if we can't parse the date
+
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=UTC)
+
+    age = now_utc() - dt.astimezone(UTC)
+    return age.days <= max_age_days
 
 def load_state() -> dict[str, Any]:
     if not STATE_PATH.exists():
@@ -854,7 +867,12 @@ def main() -> None:
                     if DEBUG:
                         print("Excluded: location")
                     continue
-
+                    
+                if not is_recent_enough(job.posted_at):
+                    if DEBUG:
+                        print("Excluded: too old")
+                    continue
+                    
                 excluded_term = exclusion_hit(job)
                 if excluded_term:
                     if DEBUG:
