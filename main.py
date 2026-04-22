@@ -664,15 +664,18 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     if contains_any(location_text, ATLANTA_BOOST_TERMS):
         score += 1
         add_reason_once(reasons, "Atlanta")
-    # Add title-based scoring (new)
+    # Add title-based scoring
     title_points, title_reasons = title_signal_score(job.title)
     score += title_points
     for reason in title_reasons:
         add_reason_once(reasons, reason)
-        penalty_points, penalty_reasons = title_penalty_score(job.title)
+
+    # Apply penalty for operations/strategy-heavy titles
+    penalty_points, penalty_reasons = title_penalty_score(job.title)
     score += penalty_points
     for reason in penalty_reasons:
         add_reason_once(reasons, reason)
+
     return score, reasons
 
 
