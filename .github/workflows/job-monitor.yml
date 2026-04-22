@@ -38,7 +38,7 @@ jobs:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           DEBUG:  false
-          IGNORE_SEEN:  true
+          IGNORE_SEEN:  false
         run: |
           python main.py
 
