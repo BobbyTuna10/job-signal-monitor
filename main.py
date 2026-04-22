@@ -620,20 +620,25 @@ def score_job(job: Job) -> tuple[int, list[str]]:
         )
     )
 
-    has_domain_signal = any(
-        term in haystack
-        for term in [
-            "product",
-            "platform",
-            "digital experience",
-            "web",
-            "cms",
-            "aem",
-            "sitecore",
-            "martech",
-        ]
-    )
+    domain_terms = [
+        "platform",
+        "digital experience",
+        "web",
+        "cms",
+        "aem",
+        "sitecore",
+        "martech",
+        "product management",
+    ]
+    strong_stack_terms = [
+        "aem",
+        "sitecore",
+        "cms",
+        "dxp",
+        "digital experience",
+    ]
 
+    has_domain_signal = any(term in haystack for term in domain_terms)
     score = 0
     reasons: list[str] = []
 
@@ -704,22 +709,14 @@ def score_job(job: Job) -> tuple[int, list[str]]:
     # Add title-based scoring
     title_points, title_reasons = title_signal_score(job.title)
     score += title_points
+
     for reason in title_reasons:
         add_reason_once(reasons, reason)
 
-    # Apply penalty for operations/strategy-heavy titles
-    #penalty_points, penalty_reasons = title_penalty_score(job.title)
-    #score += penalty_points
-    #for reason in penalty_reasons:
-        #add_reason_once(reasons, reason)
-    #ADD THIS BLOCK HERE
-    if not has_domain_signal and not any(
-        term in haystack for term in [
-            "aem", "sitecore", "cms", "dxp", "digital experience"
-        ]
-    ):
-        return 0, []
-    return score, reasons
+      if not has_domain_signal and not any(term in haystack for term in strong_stack_terms):
+          return 0, []
+          
+      return score, reasons
 
 def is_recent_enough(posted_at: Optional[str]) -> bool:
     if not posted_at:
