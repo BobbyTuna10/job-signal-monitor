@@ -412,20 +412,45 @@ def location_allowed(location: str) -> bool:
     remote_us_terms = [
         "remote us",
         "remote - us",
-        "remote - united states",
+        "remote - usa",
+        "remote usa",
         "remote united states",
+        "remote - united states",
         "united states - remote",
+        "usa - remote",
+        "u.s. - remote",
+    ]
+
+    us_broad_terms = [
         "united states",
-        "u.s.",
-        "us only",
         "usa",
+        "u.s.",
     ]
 
     if any(term in loc for term in atlanta_terms):
         return True
 
-    if "remote" in loc and any(term in loc for term in remote_us_terms):
+    if "remote" in loc and any(term in loc for term in remote_us_terms + us_broad_terms):
         return True
+
+    # Allow broad U.S. listings like "United States" or "USA"
+    # so long as they are not clearly non-U.S.
+    if any(term in loc for term in us_broad_terms):
+        blocked_non_us_terms = [
+            "canada",
+            "united kingdom",
+            "uk",
+            "singapore",
+            "philippines",
+            "malaysia",
+            "australia",
+            "japan",
+            "brazil",
+            "toronto",
+            "london",
+        ]
+        if not any(term in loc for term in blocked_non_us_terms):
+            return True
 
     return False
 def title_excluded_by_business_function(title: str) -> bool:
