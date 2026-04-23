@@ -1029,8 +1029,8 @@ def main() -> None:
     print(f"Errors: {len(errors)}")
     print("\n=== EXCLUSION SUMMARY ===")
     
-for key, value in exclusion_counts.items():
-    print(f"{key}: {value}")
+    for key, value in exclusion_counts.items():
+        print(f"{key}: {value}")
 
 
 if __name__ == "__main__":
