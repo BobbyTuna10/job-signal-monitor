@@ -1,5 +1,5 @@
 name: Job Signal Monitor
-#small committ to trigger workflow
+# Scheduled workflow for job signal monitoring
 on:
   schedule:
     - cron: "5 10 * * *"
