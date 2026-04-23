@@ -904,7 +904,15 @@ def main() -> None:
     total_scanned = 0
     errors: list[str] = []
     strong_matches: list[Job] = []
-
+    exclusion_counts = {
+        "location": 0,
+        "too_old": 0,
+        "term": 0,
+        "business_title": 0,
+        "missing_signal": 0,
+        "seen": 0,
+        "low_score": 0,
+}
     for source in SOURCES:
         try:
             jobs = fetch_jobs_for_source(source)
@@ -920,11 +928,15 @@ def main() -> None:
                 if not location_allowed(job.location):
                     if DEBUG:
                         print("Excluded: location")
+                    exclusion_counts["location"] += 1
                     continue
+                    
                 if not is_recent_enough(job.posted_at):
                     if DEBUG:
                         print("Excluded: too old or missing date")
+                        exclusion_counts["too_old"] += 1
                     continue    
+                    
                 if not is_recent_enough(job.posted_at):
                     if DEBUG:
                         print("Excluded: too old")
@@ -957,6 +969,7 @@ def main() -> None:
                         print("Excluded: below threshold")
                         print(f"Near-miss score: {score}")
                         print(f"Near-miss reasons: {reasons}")
+                        exclusion_counts["low_score"] += 1
                     continue
 
                 if DEBUG:
@@ -1014,6 +1027,10 @@ def main() -> None:
     print(f"Total jobs scanned: {total_scanned}")
     print(f"Strong matches: {len(strong_matches)}")
     print(f"Errors: {len(errors)}")
+    print("\n=== EXCLUSION SUMMARY ===")
+    
+for key, value in exclusion_counts.items():
+    print(f"{key}: {value}")
 
 
 if __name__ == "__main__":
