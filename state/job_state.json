@@ -1,8 +1,8 @@
 {
   "jobs_seen": {
     "greenhouse:Chime:8393494002": {
-      "alerted_at": "2026-04-24T14:56:10.122796+00:00",
-      "first_seen_at": "2026-04-24T14:56:10.122796+00:00",
+      "alerted_at": "2026-04-24T18:05:48.228165+00:00",
+      "first_seen_at": "2026-04-24T18:05:48.228165+00:00",
       "job_id": "8393494002",
       "location": "San Francisco, CA, USA",
       "match_reasons": [
@@ -17,8 +17,8 @@
       "title": "Group Product Manager, Platform"
     },
     "greenhouse:Chime:8499435002": {
-      "alerted_at": "2026-04-24T14:56:10.122796+00:00",
-      "first_seen_at": "2026-04-24T14:56:10.122796+00:00",
+      "alerted_at": "2026-04-24T18:05:48.228165+00:00",
+      "first_seen_at": "2026-04-24T18:05:48.228165+00:00",
       "job_id": "8499435002",
       "location": "New York, NY, USA; San Francisco, CA, USA",
       "match_reasons": [
@@ -34,8 +34,8 @@
       "title": "Director, Product Management, MyPay"
     },
     "greenhouse:Webflow:7721580": {
-      "alerted_at": "2026-04-24T14:56:10.122796+00:00",
-      "first_seen_at": "2026-04-24T14:56:10.122796+00:00",
+      "alerted_at": "2026-04-24T18:05:48.228165+00:00",
+      "first_seen_at": "2026-04-24T18:05:48.228165+00:00",
       "job_id": "7721580",
       "location": "CA Remote (BC & ON only); U.S. Remote",
       "match_reasons": [
@@ -52,5 +52,5 @@
       "title": "Product Manager, Subscription & Payments"
     }
   },
-  "last_run_at": "2026-04-24T14:56:10.122796+00:00"
+  "last_run_at": "2026-04-24T18:05:48.228165+00:00"
 }
