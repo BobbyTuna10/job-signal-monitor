@@ -29,7 +29,7 @@ IGNORE_SEEN = os.getenv("IGNORE_SEEN", "false").lower() == "true"
 # -----------------------------
 # --- ACTIVE (working / high confidence) ---
 SOURCES = [
-    # Core (already working for you)
+   # Core sources
     {"type": "greenhouse", "token": "airbnb", "label": "Airbnb"},
     {"type": "greenhouse", "token": "stripe", "label": "Stripe"},
     {"type": "greenhouse", "token": "dropbox", "label": "Dropbox"},
@@ -71,7 +71,7 @@ SOURCES = [
 # {"type": "greenhouse", "token": "segmentio", "label": "Segment"},
 # {"type": "greenhouse", "token": "notion", "label": "Notion"},
 
-# --- FAILED / NOT GREENHOUSE (keep for reference / future ATS support) ---
+# --- Additional sources for future ATS support ---
 # These returned 404 and likely use Workday / iCIMS / custom ATS
 
 # {"type": "greenhouse", "token": "optimizely", "label": "Optimizely"},
