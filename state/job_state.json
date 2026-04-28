@@ -17,8 +17,8 @@
       "title": "Group Product Manager, Platform"
     },
     "greenhouse:Chime:8499435002": {
-      "alerted_at": "2026-04-27T20:17:49.111958+00:00",
-      "first_seen_at": "2026-04-27T20:17:49.111958+00:00",
+      "alerted_at": "2026-04-28T07:40:21.028724+00:00",
+      "first_seen_at": "2026-04-28T07:40:21.028724+00:00",
       "job_id": "8499435002",
       "location": "New York, NY, USA; San Francisco, CA, USA",
       "match_reasons": [
@@ -32,6 +32,20 @@
       "source_company": "Chime",
       "source_type": "greenhouse",
       "title": "Director, Product Management, MyPay"
+    },
+    "greenhouse:Contentful:7782952": {
+      "alerted_at": "2026-04-28T07:40:21.028724+00:00",
+      "first_seen_at": "2026-04-28T07:40:21.028724+00:00",
+      "job_id": "7782952",
+      "location": "New York, NY, USA",
+      "match_reasons": [
+        "Digital Experience"
+      ],
+      "posted_at": "2026-04-27T17:45:01-04:00",
+      "score": 4,
+      "source_company": "Contentful",
+      "source_type": "greenhouse",
+      "title": "Customer Success Manager - Enterprise"
     },
     "greenhouse:Webflow:7721580": {
       "alerted_at": "2026-04-27T16:11:46.471625+00:00",
@@ -52,5 +66,5 @@
       "title": "Product Manager, Subscription & Payments"
     }
   },
-  "last_run_at": "2026-04-27T20:17:49.111958+00:00"
+  "last_run_at": "2026-04-28T07:40:21.028724+00:00"
 }
