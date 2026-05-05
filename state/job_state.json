@@ -1,8 +1,8 @@
 {
   "jobs_seen": {
     "greenhouse:Affirm:7718659003": {
-      "alerted_at": "2026-05-05T06:30:29.229983+00:00",
-      "first_seen_at": "2026-05-05T06:30:29.229983+00:00",
+      "alerted_at": "2026-05-05T20:18:47.646200+00:00",
+      "first_seen_at": "2026-05-05T20:18:47.646200+00:00",
       "job_id": "7718659003",
       "location": "Remote US",
       "match_reasons": [
@@ -12,11 +12,11 @@
         "Platform",
         "Product Management"
       ],
-      "posted_at": "2026-05-04T12:58:24-04:00",
+      "posted_at": "2026-05-05T08:31:26-04:00",
       "score": 9,
       "source_company": "Affirm",
       "source_type": "greenhouse",
-      "title": "Director of Product Management, Financial Platform"
+      "title": "Director of Product Management, Financial Platforms"
     },
     "greenhouse:Chime:8393494002": {
       "alerted_at": "2026-04-25T18:01:42.307017+00:00",
@@ -52,8 +52,8 @@
       "title": "Director, Product Management, MyPay"
     },
     "greenhouse:Contentful:7782952": {
-      "alerted_at": "2026-05-05T06:30:29.229983+00:00",
-      "first_seen_at": "2026-05-05T06:30:29.229983+00:00",
+      "alerted_at": "2026-05-05T20:18:47.646200+00:00",
+      "first_seen_at": "2026-05-05T20:18:47.646200+00:00",
       "job_id": "7782952",
       "location": "New York, NY, USA",
       "match_reasons": [
@@ -84,5 +84,5 @@
       "title": "Product Manager, Subscription & Payments"
     }
   },
-  "last_run_at": "2026-05-05T06:30:29.229983+00:00"
+  "last_run_at": "2026-05-05T20:18:47.646200+00:00"
 }
