@@ -1,8 +1,8 @@
 {
   "jobs_seen": {
     "greenhouse:Affirm:7718659003": {
-      "alerted_at": "2026-05-07T16:27:39.077389+00:00",
-      "first_seen_at": "2026-05-07T16:27:39.077389+00:00",
+      "alerted_at": "2026-05-07T20:48:53.505976+00:00",
+      "first_seen_at": "2026-05-07T20:48:53.505976+00:00",
       "job_id": "7718659003",
       "location": "Remote US",
       "match_reasons": [
@@ -52,8 +52,8 @@
       "title": "Director, Product Management, MyPay"
     },
     "greenhouse:Contentful:7782952": {
-      "alerted_at": "2026-05-07T16:27:39.077389+00:00",
-      "first_seen_at": "2026-05-07T16:27:39.077389+00:00",
+      "alerted_at": "2026-05-07T20:48:53.505976+00:00",
+      "first_seen_at": "2026-05-07T20:48:53.505976+00:00",
       "job_id": "7782952",
       "location": "New York, NY, USA",
       "match_reasons": [
@@ -84,5 +84,5 @@
       "title": "Product Manager, Subscription & Payments"
     }
   },
-  "last_run_at": "2026-05-07T16:27:39.077389+00:00"
+  "last_run_at": "2026-05-07T20:48:53.505976+00:00"
 }
