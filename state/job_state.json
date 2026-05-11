@@ -1,8 +1,8 @@
 {
   "jobs_seen": {
     "greenhouse:Affirm:7718659003": {
-      "alerted_at": "2026-05-10T19:46:30.272894+00:00",
-      "first_seen_at": "2026-05-10T19:46:30.272894+00:00",
+      "alerted_at": "2026-05-11T10:46:41.435945+00:00",
+      "first_seen_at": "2026-05-11T10:46:41.435945+00:00",
       "job_id": "7718659003",
       "location": "Remote US",
       "match_reasons": [
@@ -52,8 +52,8 @@
       "title": "Director, Product Management, MyPay"
     },
     "greenhouse:Contentful:7701583": {
-      "alerted_at": "2026-05-10T19:46:30.272894+00:00",
-      "first_seen_at": "2026-05-10T19:46:30.272894+00:00",
+      "alerted_at": "2026-05-11T10:46:41.435945+00:00",
+      "first_seen_at": "2026-05-11T10:46:41.435945+00:00",
       "job_id": "7701583",
       "location": "Denver, Colorado, United States",
       "match_reasons": [
@@ -66,8 +66,8 @@
       "title": "Customer Success Manager"
     },
     "greenhouse:Contentful:7782952": {
-      "alerted_at": "2026-05-10T19:46:30.272894+00:00",
-      "first_seen_at": "2026-05-10T19:46:30.272894+00:00",
+      "alerted_at": "2026-05-11T10:46:41.435945+00:00",
+      "first_seen_at": "2026-05-11T10:46:41.435945+00:00",
       "job_id": "7782952",
       "location": "New York, NY, USA",
       "match_reasons": [
@@ -98,5 +98,5 @@
       "title": "Product Manager, Subscription & Payments"
     }
   },
-  "last_run_at": "2026-05-10T19:46:30.272894+00:00"
+  "last_run_at": "2026-05-11T10:46:41.435945+00:00"
 }
