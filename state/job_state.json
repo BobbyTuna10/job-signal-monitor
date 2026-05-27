@@ -35,8 +35,8 @@
       "title": "Group Product Manager, Platform"
     },
     "greenhouse:Chime:8499435002": {
-      "alerted_at": "2026-05-04T20:48:53.188378+00:00",
-      "first_seen_at": "2026-05-04T20:48:53.188378+00:00",
+      "alerted_at": "2026-05-27T23:35:00.862384+00:00",
+      "first_seen_at": "2026-05-27T23:35:00.862384+00:00",
       "job_id": "8499435002",
       "location": "New York, NY, USA; San Francisco, CA, USA",
       "match_reasons": [
@@ -45,15 +45,15 @@
         "Product",
         "Product Management"
       ],
-      "posted_at": "2026-04-23T21:24:29-04:00",
+      "posted_at": "2026-05-27T17:00:40-04:00",
       "score": 7,
       "source_company": "Chime",
       "source_type": "greenhouse",
       "title": "Director, Product Management, MyPay"
     },
     "greenhouse:Contentful:7701583": {
-      "alerted_at": "2026-05-27T18:30:03.818237+00:00",
-      "first_seen_at": "2026-05-27T18:30:03.818237+00:00",
+      "alerted_at": "2026-05-27T23:35:00.862384+00:00",
+      "first_seen_at": "2026-05-27T23:35:00.862384+00:00",
       "job_id": "7701583",
       "location": "Denver, Colorado, United States",
       "match_reasons": [
@@ -66,8 +66,8 @@
       "title": "Customer Success Manager"
     },
     "greenhouse:Contentful:7782952": {
-      "alerted_at": "2026-05-27T18:30:03.818237+00:00",
-      "first_seen_at": "2026-05-27T18:30:03.818237+00:00",
+      "alerted_at": "2026-05-27T23:35:00.862384+00:00",
+      "first_seen_at": "2026-05-27T23:35:00.862384+00:00",
       "job_id": "7782952",
       "location": "New York, NY, USA",
       "match_reasons": [
@@ -98,8 +98,8 @@
       "title": "Product Manager, Subscription & Payments"
     },
     "greenhouse:Webflow:7921664": {
-      "alerted_at": "2026-05-27T18:30:03.818237+00:00",
-      "first_seen_at": "2026-05-27T18:30:03.818237+00:00",
+      "alerted_at": "2026-05-27T23:35:00.862384+00:00",
+      "first_seen_at": "2026-05-27T23:35:00.862384+00:00",
       "job_id": "7921664",
       "location": "U.S. Remote",
       "match_reasons": [
@@ -116,5 +116,5 @@
       "title": "Senior Business Systems Analyst, Enterprise AI Operations"
     }
   },
-  "last_run_at": "2026-05-27T18:30:03.818237+00:00"
+  "last_run_at": "2026-05-27T23:35:00.862384+00:00"
 }
