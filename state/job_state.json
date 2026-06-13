@@ -35,8 +35,8 @@
       "title": "Group Product Manager, Platform"
     },
     "greenhouse:Chime:8499435002": {
-      "alerted_at": "2026-06-13T11:59:20.539603+00:00",
-      "first_seen_at": "2026-06-13T11:59:20.539603+00:00",
+      "alerted_at": "2026-06-13T17:38:01.263674+00:00",
+      "first_seen_at": "2026-06-13T17:38:01.263674+00:00",
       "job_id": "8499435002",
       "location": "New York, NY, USA; San Francisco, CA, USA",
       "match_reasons": [
@@ -66,8 +66,8 @@
       "title": "Customer Success Manager"
     },
     "greenhouse:Contentful:7782952": {
-      "alerted_at": "2026-06-13T11:59:20.539603+00:00",
-      "first_seen_at": "2026-06-13T11:59:20.539603+00:00",
+      "alerted_at": "2026-06-13T17:38:01.263674+00:00",
+      "first_seen_at": "2026-06-13T17:38:01.263674+00:00",
       "job_id": "7782952",
       "location": "New York, NY, USA",
       "match_reasons": [
@@ -98,8 +98,8 @@
       "title": "Product Manager, Subscription & Payments"
     },
     "greenhouse:Webflow:7921664": {
-      "alerted_at": "2026-06-13T11:59:20.539603+00:00",
-      "first_seen_at": "2026-06-13T11:59:20.539603+00:00",
+      "alerted_at": "2026-06-13T17:38:01.263674+00:00",
+      "first_seen_at": "2026-06-13T17:38:01.263674+00:00",
       "job_id": "7921664",
       "location": "U.S. Remote",
       "match_reasons": [
@@ -116,5 +116,5 @@
       "title": "Senior Business Systems Analyst, Enterprise AI Operations"
     }
   },
-  "last_run_at": "2026-06-13T11:59:20.539603+00:00"
+  "last_run_at": "2026-06-13T17:38:01.263674+00:00"
 }
