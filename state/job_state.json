@@ -1,8 +1,8 @@
 {
   "jobs_seen": {
     "greenhouse:Affirm:7718659003": {
-      "alerted_at": "2026-05-16T06:38:48.349837+00:00",
-      "first_seen_at": "2026-05-16T06:38:48.349837+00:00",
+      "alerted_at": "2026-06-18T18:29:09.082716+00:00",
+      "first_seen_at": "2026-06-18T18:29:09.082716+00:00",
       "job_id": "7718659003",
       "location": "Remote US",
       "match_reasons": [
@@ -12,7 +12,7 @@
         "Platform",
         "Product Management"
       ],
-      "posted_at": "2026-05-05T08:31:26-04:00",
+      "posted_at": "2026-06-18T11:27:47-04:00",
       "score": 9,
       "source_company": "Affirm",
       "source_type": "greenhouse",
@@ -116,5 +116,5 @@
       "title": "Senior Business Systems Analyst, Enterprise AI Operations"
     }
   },
-  "last_run_at": "2026-06-18T13:35:49.088276+00:00"
+  "last_run_at": "2026-06-18T18:29:09.082716+00:00"
 }
