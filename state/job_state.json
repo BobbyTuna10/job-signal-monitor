@@ -1,8 +1,8 @@
 {
   "jobs_seen": {
     "greenhouse:Affirm:7718659003": {
-      "alerted_at": "2026-06-22T19:35:41.509934+00:00",
-      "first_seen_at": "2026-06-22T19:35:41.509934+00:00",
+      "alerted_at": "2026-06-22T23:40:30.681910+00:00",
+      "first_seen_at": "2026-06-22T23:40:30.681910+00:00",
       "job_id": "7718659003",
       "location": "Remote US",
       "match_reasons": [
@@ -19,8 +19,8 @@
       "title": "Director of Product Management, Financial Platforms"
     },
     "greenhouse:Affirm:7776437003": {
-      "alerted_at": "2026-06-22T19:35:41.509934+00:00",
-      "first_seen_at": "2026-06-22T19:35:41.509934+00:00",
+      "alerted_at": "2026-06-22T23:40:30.681910+00:00",
+      "first_seen_at": "2026-06-22T23:40:30.681910+00:00",
       "job_id": "7776437003",
       "location": "Remote US",
       "match_reasons": [
@@ -133,5 +133,5 @@
       "title": "Senior Business Systems Analyst, Enterprise AI Operations"
     }
   },
-  "last_run_at": "2026-06-22T19:35:41.509934+00:00"
+  "last_run_at": "2026-06-22T23:40:30.681910+00:00"
 }
