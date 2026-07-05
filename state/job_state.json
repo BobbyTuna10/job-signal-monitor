@@ -36,8 +36,8 @@
       "title": "Staff Product Manager, App Platform & Experience"
     },
     "greenhouse:Affirm:7780490003": {
-      "alerted_at": "2026-07-05T17:18:06.825660+00:00",
-      "first_seen_at": "2026-07-05T17:18:06.825660+00:00",
+      "alerted_at": "2026-07-05T23:13:18.829301+00:00",
+      "first_seen_at": "2026-07-05T23:13:18.829301+00:00",
       "job_id": "7780490003",
       "location": "Remote US",
       "match_reasons": [
@@ -149,8 +149,8 @@
       "title": "Senior Business Systems Analyst, Enterprise AI Operations"
     },
     "greenhouse:Webflow:8038479": {
-      "alerted_at": "2026-07-05T17:18:06.825660+00:00",
-      "first_seen_at": "2026-07-05T17:18:06.825660+00:00",
+      "alerted_at": "2026-07-05T23:13:18.829301+00:00",
+      "first_seen_at": "2026-07-05T23:13:18.829301+00:00",
       "job_id": "8038479",
       "location": "CA Remote (BC & ON only); U.S. Remote",
       "match_reasons": [
@@ -168,5 +168,5 @@
       "title": "Staff Product Manager, Governance"
     }
   },
-  "last_run_at": "2026-07-05T17:18:06.825660+00:00"
+  "last_run_at": "2026-07-05T23:13:18.829301+00:00"
 }
