@@ -52,8 +52,8 @@
       "title": "Director, Product Management (Shopping & Offers)"
     },
     "greenhouse:Affirm:7801336003": {
-      "alerted_at": "2026-07-15T23:08:11.253591+00:00",
-      "first_seen_at": "2026-07-15T23:08:11.253591+00:00",
+      "alerted_at": "2026-07-16T11:47:33.577043+00:00",
+      "first_seen_at": "2026-07-16T11:47:33.577043+00:00",
       "job_id": "7801336003",
       "location": "Remote US",
       "match_reasons": [
@@ -184,5 +184,5 @@
       "title": "Staff Product Manager, Governance"
     }
   },
-  "last_run_at": "2026-07-15T23:08:11.253591+00:00"
+  "last_run_at": "2026-07-16T11:47:33.577043+00:00"
 }
